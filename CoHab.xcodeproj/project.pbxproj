@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D17036CD1C9A1302006E6061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17036CC1C9A1302006E6061 /* AppDelegate.swift */; };
+		D17036CF1C9A1302006E6061 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17036CE1C9A1302006E6061 /* ViewController.swift */; };
+		D17036D21C9A1302006E6061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D17036D01C9A1302006E6061 /* Main.storyboard */; };
+		D17036D41C9A1302006E6061 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D17036D31C9A1302006E6061 /* Assets.xcassets */; };
+		D17036D71C9A1302006E6061 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D17036D51C9A1302006E6061 /* LaunchScreen.storyboard */; };
+		D17036E21C9A1302006E6061 /* CoHabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17036E11C9A1302006E6061 /* CoHabTests.swift */; };
+		D17036ED1C9A1302006E6061 /* CoHabUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17036EC1C9A1302006E6061 /* CoHabUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D17036DE1C9A1302006E6061 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D17036C11C9A1302006E6061 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D17036C81C9A1302006E6061;
+			remoteInfo = CoHab;
+		};
+		D17036E91C9A1302006E6061 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D17036C11C9A1302006E6061 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D17036C81C9A1302006E6061;
+			remoteInfo = CoHab;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D17036C91C9A1302006E6061 /* CoHab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoHab.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D17036CC1C9A1302006E6061 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D17036CE1C9A1302006E6061 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D17036D11C9A1302006E6061 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D17036D31C9A1302006E6061 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D17036D61C9A1302006E6061 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D17036D81C9A1302006E6061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D17036DD1C9A1302006E6061 /* CoHabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoHabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D17036E11C9A1302006E6061 /* CoHabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoHabTests.swift; sourceTree = "<group>"; };
+		D17036E31C9A1302006E6061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D17036E81C9A1302006E6061 /* CoHabUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoHabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D17036EC1C9A1302006E6061 /* CoHabUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoHabUITests.swift; sourceTree = "<group>"; };
+		D17036EE1C9A1302006E6061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D17036C61C9A1302006E6061 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D17036DA1C9A1302006E6061 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D17036E51C9A1302006E6061 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D17036C01C9A1302006E6061 = {
+			isa = PBXGroup;
+			children = (
+				D17036CB1C9A1302006E6061 /* CoHab */,
+				D17036E01C9A1302006E6061 /* CoHabTests */,
+				D17036EB1C9A1302006E6061 /* CoHabUITests */,
+				D17036CA1C9A1302006E6061 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D17036CA1C9A1302006E6061 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D17036C91C9A1302006E6061 /* CoHab.app */,
+				D17036DD1C9A1302006E6061 /* CoHabTests.xctest */,
+				D17036E81C9A1302006E6061 /* CoHabUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D17036CB1C9A1302006E6061 /* CoHab */ = {
+			isa = PBXGroup;
+			children = (
+				D17036CC1C9A1302006E6061 /* AppDelegate.swift */,
+				D17036CE1C9A1302006E6061 /* ViewController.swift */,
+				D17036D01C9A1302006E6061 /* Main.storyboard */,
+				D17036D31C9A1302006E6061 /* Assets.xcassets */,
+				D17036D51C9A1302006E6061 /* LaunchScreen.storyboard */,
+				D17036D81C9A1302006E6061 /* Info.plist */,
+			);
+			path = CoHab;
+			sourceTree = "<group>";
+		};
+		D17036E01C9A1302006E6061 /* CoHabTests */ = {
+			isa = PBXGroup;
+			children = (
+				D17036E11C9A1302006E6061 /* CoHabTests.swift */,
+				D17036E31C9A1302006E6061 /* Info.plist */,
+			);
+			path = CoHabTests;
+			sourceTree = "<group>";
+		};
+		D17036EB1C9A1302006E6061 /* CoHabUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D17036EC1C9A1302006E6061 /* CoHabUITests.swift */,
+				D17036EE1C9A1302006E6061 /* Info.plist */,
+			);
+			path = CoHabUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D17036C81C9A1302006E6061 /* CoHab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D17036F11C9A1302006E6061 /* Build configuration list for PBXNativeTarget "CoHab" */;
+			buildPhases = (
+				D17036C51C9A1302006E6061 /* Sources */,
+				D17036C61C9A1302006E6061 /* Frameworks */,
+				D17036C71C9A1302006E6061 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoHab;
+			productName = CoHab;
+			productReference = D17036C91C9A1302006E6061 /* CoHab.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D17036DC1C9A1302006E6061 /* CoHabTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D17036F41C9A1302006E6061 /* Build configuration list for PBXNativeTarget "CoHabTests" */;
+			buildPhases = (
+				D17036D91C9A1302006E6061 /* Sources */,
+				D17036DA1C9A1302006E6061 /* Frameworks */,
+				D17036DB1C9A1302006E6061 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D17036DF1C9A1302006E6061 /* PBXTargetDependency */,
+			);
+			name = CoHabTests;
+			productName = CoHabTests;
+			productReference = D17036DD1C9A1302006E6061 /* CoHabTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D17036E71C9A1302006E6061 /* CoHabUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D17036F71C9A1302006E6061 /* Build configuration list for PBXNativeTarget "CoHabUITests" */;
+			buildPhases = (
+				D17036E41C9A1302006E6061 /* Sources */,
+				D17036E51C9A1302006E6061 /* Frameworks */,
+				D17036E61C9A1302006E6061 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D17036EA1C9A1302006E6061 /* PBXTargetDependency */,
+			);
+			name = CoHabUITests;
+			productName = CoHabUITests;
+			productReference = D17036E81C9A1302006E6061 /* CoHabUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D17036C11C9A1302006E6061 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Christian ";
+				TargetAttributes = {
+					D17036C81C9A1302006E6061 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = NDA6SX8WLX;
+					};
+					D17036DC1C9A1302006E6061 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = NDA6SX8WLX;
+						TestTargetID = D17036C81C9A1302006E6061;
+					};
+					D17036E71C9A1302006E6061 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = NDA6SX8WLX;
+						TestTargetID = D17036C81C9A1302006E6061;
+					};
+				};
+			};
+			buildConfigurationList = D17036C41C9A1302006E6061 /* Build configuration list for PBXProject "CoHab" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D17036C01C9A1302006E6061;
+			productRefGroup = D17036CA1C9A1302006E6061 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D17036C81C9A1302006E6061 /* CoHab */,
+				D17036DC1C9A1302006E6061 /* CoHabTests */,
+				D17036E71C9A1302006E6061 /* CoHabUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D17036C71C9A1302006E6061 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D17036D71C9A1302006E6061 /* LaunchScreen.storyboard in Resources */,
+				D17036D41C9A1302006E6061 /* Assets.xcassets in Resources */,
+				D17036D21C9A1302006E6061 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D17036DB1C9A1302006E6061 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D17036E61C9A1302006E6061 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D17036C51C9A1302006E6061 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D17036CF1C9A1302006E6061 /* ViewController.swift in Sources */,
+				D17036CD1C9A1302006E6061 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D17036D91C9A1302006E6061 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D17036E21C9A1302006E6061 /* CoHabTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D17036E41C9A1302006E6061 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D17036ED1C9A1302006E6061 /* CoHabUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D17036DF1C9A1302006E6061 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D17036C81C9A1302006E6061 /* CoHab */;
+			targetProxy = D17036DE1C9A1302006E6061 /* PBXContainerItemProxy */;
+		};
+		D17036EA1C9A1302006E6061 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D17036C81C9A1302006E6061 /* CoHab */;
+			targetProxy = D17036E91C9A1302006E6061 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D17036D01C9A1302006E6061 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D17036D11C9A1302006E6061 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D17036D51C9A1302006E6061 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D17036D61C9A1302006E6061 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D17036EF1C9A1302006E6061 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D17036F01C9A1302006E6061 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D17036F21C9A1302006E6061 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CoHab/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Comp330.CoHab;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D17036F31C9A1302006E6061 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CoHab/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Comp330.CoHab;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D17036F51C9A1302006E6061 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CoHabTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Comp330.CoHabTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoHab.app/CoHab";
+			};
+			name = Debug;
+		};
+		D17036F61C9A1302006E6061 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CoHabTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Comp330.CoHabTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoHab.app/CoHab";
+			};
+			name = Release;
+		};
+		D17036F81C9A1302006E6061 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CoHabUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Comp330.CoHabUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CoHab;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		D17036F91C9A1302006E6061 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CoHabUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Comp330.CoHabUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CoHab;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D17036C41C9A1302006E6061 /* Build configuration list for PBXProject "CoHab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D17036EF1C9A1302006E6061 /* Debug */,
+				D17036F01C9A1302006E6061 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D17036F11C9A1302006E6061 /* Build configuration list for PBXNativeTarget "CoHab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D17036F21C9A1302006E6061 /* Debug */,
+				D17036F31C9A1302006E6061 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D17036F41C9A1302006E6061 /* Build configuration list for PBXNativeTarget "CoHabTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D17036F51C9A1302006E6061 /* Debug */,
+				D17036F61C9A1302006E6061 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D17036F71C9A1302006E6061 /* Build configuration list for PBXNativeTarget "CoHabUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D17036F81C9A1302006E6061 /* Debug */,
+				D17036F91C9A1302006E6061 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D17036C11C9A1302006E6061 /* Project object */;
+}
