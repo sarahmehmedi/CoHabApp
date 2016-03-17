@@ -15,7 +15,7 @@
 		D17036ED1C9A1302006E6061 /* CoHabUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17036EC1C9A1302006E6061 /* CoHabUITests.swift */; };
 		D17036FB1C9A1F17006E6061 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17036FA1C9A1F17006E6061 /* RegisterPageViewController.swift */; };
 		D17036FD1C9A7A08006E6061 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17036FC1C9A7A08006E6061 /* LoginViewController.swift */; };
-		D17036FF1C9B3E3E006E6061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D17036FE1C9B3E3E006E6061 /* Main.storyboard */; };
+		D17037011C9B6D2C006E6061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D17037001C9B6D2C006E6061 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,7 @@
 		D17036EE1C9A1302006E6061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D17036FA1C9A1F17006E6061 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 		D17036FC1C9A7A08006E6061 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		D17036FE1C9B3E3E006E6061 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
+		D17037001C9B6D2C006E6061 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +104,7 @@
 				D17036CC1C9A1302006E6061 /* AppDelegate.swift */,
 				D17036CE1C9A1302006E6061 /* ViewController.swift */,
 				D17036D31C9A1302006E6061 /* Assets.xcassets */,
-				D17036FE1C9B3E3E006E6061 /* Main.storyboard */,
+				D17037001C9B6D2C006E6061 /* Main.storyboard */,
 				D17036D51C9A1302006E6061 /* LaunchScreen.storyboard */,
 				D17036D81C9A1302006E6061 /* Info.plist */,
 				D17036FA1C9A1F17006E6061 /* RegisterPageViewController.swift */,
@@ -238,7 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D17036FF1C9B3E3E006E6061 /* Main.storyboard in Resources */,
+				D17037011C9B6D2C006E6061 /* Main.storyboard in Resources */,
 				D17036D71C9A1302006E6061 /* LaunchScreen.storyboard in Resources */,
 				D17036D41C9A1302006E6061 /* Assets.xcassets in Resources */,
 			);
@@ -487,6 +487,7 @@
 				D17036F31C9A1302006E6061 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D17036F41C9A1302006E6061 /* Build configuration list for PBXNativeTarget "CoHabTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +496,7 @@
 				D17036F61C9A1302006E6061 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D17036F71C9A1302006E6061 /* Build configuration list for PBXNativeTarget "CoHabUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +505,7 @@
 				D17036F91C9A1302006E6061 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
