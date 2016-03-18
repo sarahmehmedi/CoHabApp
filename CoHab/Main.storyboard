@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7qY-jo-GkL">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -127,6 +128,7 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="qtt-Zh-LlY" eventType="touchUpInside" id="vGs-YN-3cO"/>
+                                    <segue destination="AlV-qD-9oa" kind="show" id="G0P-jp-SYQ"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Title" translatesAutoresizingMaskIntoConstraints="NO" id="EbE-3L-NVh">
@@ -174,6 +176,204 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h7o-q7-BTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1599" y="348"/>
+        </scene>
+        <!--HomeViewController-->
+        <scene sceneID="B2T-ch-nk8">
+            <objects>
+                <viewController title="HomeViewController" id="AlV-qD-9oa" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qR7-0w-jUJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="3xS-xu-gBs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zWy-5t-RYK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LoP-gJ-PkY">
+                                <rect key="frame" x="260" y="49" width="81" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="d9i-lh-JPW"/>
+                                    <constraint firstAttribute="width" constant="81" id="gqw-eP-Foq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="buP-JY-xr9">
+                                <rect key="frame" x="188" y="120" width="225" height="460"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="225" id="kaa-ii-KkD"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RiO-o2-cLU">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="nfn-go-As3">
+                                        <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdT-mv-8F0">
+                                                    <rect key="frame" x="8" y="38" width="89" height="30"/>
+                                                    <state key="normal" title="My Schedule"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="hdT-mv-8F0" firstAttribute="leading" secondItem="nfn-go-As3" secondAttribute="leadingMargin" id="E1G-YZ-Mzs"/>
+                                            <constraint firstItem="hdT-mv-8F0" firstAttribute="centerY" secondItem="nfn-go-As3" secondAttribute="centerY" id="afN-YV-l9Z"/>
+                                        </constraints>
+                                        <size key="customSize" width="105" height="105"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wsH-zK-zxh">
+                                        <rect key="frame" x="120" y="0.0" width="105" height="105"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="keA-pV-P2w">
+                                                    <rect key="frame" x="29" y="38" width="49" height="30"/>
+                                                    <state key="normal" title="Tasks"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="keA-pV-P2w" firstAttribute="centerY" secondItem="wsH-zK-zxh" secondAttribute="centerY" id="1sR-xu-Igx"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="keA-pV-P2w" secondAttribute="trailing" constant="19" id="R3a-uh-g4K"/>
+                                            <constraint firstItem="keA-pV-P2w" firstAttribute="leading" secondItem="wsH-zK-zxh" secondAttribute="leadingMargin" constant="21" id="Z0b-eb-lzv"/>
+                                        </constraints>
+                                        <size key="customSize" width="105" height="105"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="d07-D8-JzY">
+                                        <rect key="frame" x="0.0" y="115" width="105" height="105"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXU-Ef-Bx4">
+                                                    <rect key="frame" x="30" y="38" width="46" height="30"/>
+                                                    <state key="normal" title="Bills"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="lXU-Ef-Bx4" firstAttribute="centerX" secondItem="d07-D8-JzY" secondAttribute="centerX" id="AZv-76-urD"/>
+                                            <constraint firstItem="lXU-Ef-Bx4" firstAttribute="centerY" secondItem="d07-D8-JzY" secondAttribute="centerY" id="YNi-Vd-gRa"/>
+                                            <constraint firstItem="lXU-Ef-Bx4" firstAttribute="leading" secondItem="d07-D8-JzY" secondAttribute="leadingMargin" constant="22" id="elZ-jr-2DO"/>
+                                        </constraints>
+                                        <size key="customSize" width="105" height="105"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="70H-N1-VDv">
+                                        <rect key="frame" x="120" y="115" width="105" height="105"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCb-mR-gqX">
+                                                    <rect key="frame" x="21" y="38" width="63" height="30"/>
+                                                    <state key="normal" title="Calendar"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="pCb-mR-gqX" firstAttribute="centerY" secondItem="70H-N1-VDv" secondAttribute="centerY" id="SSG-yC-t5f"/>
+                                            <constraint firstItem="pCb-mR-gqX" firstAttribute="leading" secondItem="70H-N1-VDv" secondAttribute="leadingMargin" constant="13" id="gcx-1v-8lB"/>
+                                            <constraint firstItem="pCb-mR-gqX" firstAttribute="centerX" secondItem="70H-N1-VDv" secondAttribute="centerX" id="nUD-Bb-KFe"/>
+                                        </constraints>
+                                        <size key="customSize" width="105" height="105"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jeR-sC-DeT">
+                                        <rect key="frame" x="0.0" y="230" width="105" height="105"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73p-3z-BFN">
+                                                    <rect key="frame" x="27" y="38" width="50" height="30"/>
+                                                    <state key="normal" title="Group"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="73p-3z-BFN" firstAttribute="centerX" secondItem="jeR-sC-DeT" secondAttribute="centerX" id="BDZ-ut-RvZ"/>
+                                            <constraint firstItem="73p-3z-BFN" firstAttribute="leading" secondItem="jeR-sC-DeT" secondAttribute="leadingMargin" constant="19" id="SID-LJ-m3T"/>
+                                            <constraint firstItem="73p-3z-BFN" firstAttribute="centerY" secondItem="jeR-sC-DeT" secondAttribute="centerY" id="j6x-ox-zgJ"/>
+                                        </constraints>
+                                        <size key="customSize" width="105" height="105"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Zie-es-6Pa">
+                                        <rect key="frame" x="120" y="230" width="105" height="105"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="SuT-iE-ZNM">
+                                                    <rect key="frame" x="20" y="31" width="64" height="44"/>
+                                                    <state key="normal" title="Building Reports"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="SuT-iE-ZNM" firstAttribute="leading" secondItem="Zie-es-6Pa" secondAttribute="leadingMargin" constant="12" id="Hek-fd-kyN"/>
+                                            <constraint firstItem="SuT-iE-ZNM" firstAttribute="centerY" secondItem="Zie-es-6Pa" secondAttribute="centerY" id="JVG-yj-ps7"/>
+                                            <constraint firstItem="SuT-iE-ZNM" firstAttribute="centerX" secondItem="Zie-es-6Pa" secondAttribute="centerX" id="Kfo-yU-7mg"/>
+                                            <constraint firstItem="SuT-iE-ZNM" firstAttribute="top" secondItem="Zie-es-6Pa" secondAttribute="topMargin" constant="23" id="nZg-db-XRx"/>
+                                        </constraints>
+                                        <size key="customSize" width="105" height="105"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Htb-IR-fHN">
+                                        <rect key="frame" x="0.0" y="345" width="105" height="105"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSK-8l-Uwr">
+                                                    <rect key="frame" x="19" y="38" width="66" height="30"/>
+                                                    <state key="normal" title="Settings"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="vSK-8l-Uwr" firstAttribute="leading" secondItem="Htb-IR-fHN" secondAttribute="leadingMargin" constant="11" id="3kG-tl-zzL"/>
+                                            <constraint firstItem="vSK-8l-Uwr" firstAttribute="centerY" secondItem="Htb-IR-fHN" secondAttribute="centerY" id="JRp-7V-i4I"/>
+                                            <constraint firstItem="vSK-8l-Uwr" firstAttribute="centerX" secondItem="Htb-IR-fHN" secondAttribute="centerX" id="O1p-Lr-pou"/>
+                                        </constraints>
+                                        <size key="customSize" width="105" height="105"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="buP-JY-xr9" firstAttribute="top" secondItem="LoP-gJ-PkY" secondAttribute="bottom" constant="21" id="3u0-vZ-iMa"/>
+                            <constraint firstAttribute="bottom" secondItem="buP-JY-xr9" secondAttribute="bottom" constant="20" symbolic="YES" id="8Kv-Tn-WhQ"/>
+                            <constraint firstItem="buP-JY-xr9" firstAttribute="centerX" secondItem="LoP-gJ-PkY" secondAttribute="centerX" id="cQh-qa-Lqh"/>
+                            <constraint firstItem="buP-JY-xr9" firstAttribute="centerX" secondItem="zWy-5t-RYK" secondAttribute="centerX" id="sDd-67-zWJ"/>
+                            <constraint firstItem="LoP-gJ-PkY" firstAttribute="top" secondItem="qR7-0w-jUJ" secondAttribute="bottom" constant="29" id="tKq-CU-3Cx"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gwy-Uo-sc9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2391" y="348"/>
         </scene>
         <!--Register Page View Controller-->
         <scene sceneID="T7w-cZ-EB7">
