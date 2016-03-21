@@ -62,8 +62,54 @@ class LoginViewController: UIViewController {
         }
         else {displayMyAlertMessage("Invalid Username");
         }
-    }
 
+    }
+}
+//
+//        if(userEmail.isEmpty || userPassword.isEmpty) { return;}
+//        
+//        //send user data to server side
+//        let myUrl = NSURL(string: "http://mysql.cs.luc.edu/~smehmedi/CohabApp/userLogin.php");
+//        let request = NSMutableURLRequest(URL:myUrl!);
+//        request.HTTPMethod = "POST";
+//        
+//        let postString = "email=\(userEmail)&password=\(userPassword)";
+//        
+//        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding);
+//        
+//        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
+//            data, response, error -> Void in
+//            
+//            if error != nil{
+//                print("error=\(error)")
+//                return
+//            }
+//            
+//            do{
+//                
+//                if let parseJSON = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary{
+//                    
+//                    print(error!.localizedDescription)
+//                    print("json: \(parseJSON)");
+//                    
+//                    let resultValue = parseJSON["status"] as! String;
+//                    print("result: \(resultValue)")
+//                    
+//                    if(resultValue=="Success"){
+//                        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isUserLoggedIn");
+//                        NSUserDefaults.standardUserDefaults().synchronize();
+//                        
+//                        self.dismissViewControllerAnimated(true, completion: nil);
+//                    })
+//                    }
+//                } catch let error as NSError{
+//                    print(error)
+//            }
+//            }
+//        
+//        task.resume()
+//    }
+//}
     /*
     // MARK: - Navigation
 
@@ -73,5 +119,3 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
-}
