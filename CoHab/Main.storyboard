@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoHab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoHab" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -59,7 +59,7 @@
         <!--Login View Controller-->
         <scene sceneID="IeP-kZ-67S">
             <objects>
-                <viewController id="qtt-Zh-LlY" customClass="LoginViewController" customModule="CoHab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qtt-Zh-LlY" customClass="LoginViewController" customModule="CoHab" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lz3-tx-QVh"/>
                         <viewControllerLayoutGuide type="bottom" id="ftH-zg-BVc"/>
@@ -231,7 +231,7 @@
         <!--Register Page View Controller-->
         <scene sceneID="T7w-cZ-EB7">
             <objects>
-                <viewController id="14s-6A-nWe" customClass="RegisterPageViewController" customModule="CoHab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="14s-6A-nWe" customClass="RegisterPageViewController" customModule="CoHab" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2F4-L0-Wk6"/>
                         <viewControllerLayoutGuide type="bottom" id="BnK-Zg-MwC"/>

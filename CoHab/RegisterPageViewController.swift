@@ -5,7 +5,7 @@
 //  Created by Christian  on 3/16/16.
 //  Copyright © 2016 Christian . All rights reserved.
 //
-
+import Alamofire
 import UIKit
 
 class RegisterPageViewController: UIViewController {
@@ -65,103 +65,59 @@ class RegisterPageViewController: UIViewController {
             return;
         }
         
-        // INSERT BETWEEN HERE ***
-        
-        // Store Data right now this is storing local data which is a problem********* emphasis on the problem, it works but
-        // This should be hosted somewhere, at the very bottom of this is a long section of code I was playing with to try to set
-        // up a database but I failed after like 200 attempts. If you want to play with it insert it between the sections I indicated 
-        // and delete what is inbetween.
-        NSUserDefaults.standardUserDefaults().setObject(userEmail, forKey: "userEmail");
-        NSUserDefaults.standardUserDefaults().setObject(userPassword, forKey: "userPassword");
-        NSUserDefaults.standardUserDefaults().synchronize()
-        
-        // Display Alert Message With Confirmation
-        let myAlert = UIAlertController(title:"Alert", message:"Registration Is Succesful!", preferredStyle:UIAlertControllerStyle.Alert);
-        
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){
-        action in
-        self.dismissViewControllerAnimated(true, completion: nil);
-        }
-        myAlert.addAction(okAction);
-        self.presentViewController(myAlert, animated: true, completion: nil);
-        
-        // AND HERE ***
-        
-    }
+        //so REGISTRATION WORKS!!! the Login i have to modify to connect to database - sarah
     
-        /*
-    // MARK: - Navigation
+        let myUrl = NSURL(string: "http://mysql.cs.luc.edu/~smehmedi/CohabApp/userRegister.php");
+        let request = NSMutableURLRequest(URL:myUrl!);
+        request.HTTPMethod = "POST";
+        print(request)
+        let postString = "email=\(userEmail!)&password=\(userPassword!)";
+        print(postString)
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding);
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
+            data, response, error -> Void in
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+            if error != nil{
+                print("error=\(error)")
+                return
+            }
+            print(response)
+            
+            do{
+                print(data!)
+            
+                if let parseJSON = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as? NSDictionary{
+                    
+//                    print(error!.localizedDescription)
+                    print("json: \(parseJSON)");
+                    
+                    let resultValue = parseJSON["status"] as! String;
+                    print("result: \(resultValue)")
+                    
+                    var isUserRegistered:Bool = false;
+                    if(resultValue=="Success") { isUserRegistered = true; }
+
+                    var messageToDisplay:String = parseJSON["message"] as! String;
+                    if(!isUserRegistered){ messageToDisplay = parseJSON["message"] as! String; }
+                    
+                    dispatch_async(dispatch_get_main_queue(), {
+                        
+                        let myAlert = UIAlertController(title: "Alert", message: messageToDisplay, preferredStyle:  UIAlertControllerStyle.Alert);
+                        
+                        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil);
+                        
+                        myAlert.addAction(okAction);
+                        
+                        self.presentViewController(myAlert, animated: true, completion: nil);
+                    })
+                    
+                    }
+                } catch let error as NSError{
+                print(error)
+            }
+            }
+            task.resume()
+        
     }
-    */
-
 }
-
-
-
-
-/*
-let myURL = NSURL(string: "http://cohab.byethost22.com/userRegistration.php");
-let request = NSMutableURLRequest(URL: myURL!);
-request.HTTPMethod = "POST";
-
-let postString="email=\(userEmail)&password=\(userPassword)";
-
-request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding);
-
-let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
-data, response, error -> Void in
-
-
-if (error != nil){
-print("error=\(error)")
-return
-}
-
-do{
-if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
-
-print(error!.localizedDescription)
-print("json: \(json)");
-
-let resultValue = json["status"] as! String;
-print("Result: \(resultValue)")
-
-var isUserRegistered:Bool = false;
-
-if(resultValue=="Success"){
-isUserRegistered = true;
-}
-
-var messageTodisplay:String = json["message"] as! String;
-
-if(!isUserRegistered){
-messageTodisplay = json["message"] as! String;
-}
-
-dispatch_async(dispatch_get_main_queue(), {
-
-let myAlert = UIAlertController(title: "Alert", message:
-messageTodisplay, preferredStyle: UIAlertControllerStyle.Alert);
-
-let okaction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil);
-
-myAlert.addAction(okaction);
-
-self.presentViewController(myAlert, animated:true, completion:nil);
-})
-}
-}catch let error as NSError{
-print(error)
-}
-}
-task.resume();
-
-}
-*/
-
-
