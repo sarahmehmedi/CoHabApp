@@ -18,16 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="CoHabLogo" translatesAutoresizingMaskIntoConstraints="NO" id="voX-pE-DuV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CoHabLogo" translatesAutoresizingMaskIntoConstraints="NO" id="voX-pE-DuV">
                                 <rect key="frame" x="114" y="93" width="373" height="413"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="413" id="VkJ-tv-TeK"/>
-                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="  Copyright © 2016 CoHab Group. All rights reserved." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtC-VX-Ijh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright © 2016 CoHab Group. All rights reserved." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtC-VX-Ijh">
                                 <rect key="frame" x="123" y="571" width="354" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="354" id="MJz-fL-iUe"/>
+                                    <constraint firstAttribute="width" constant="354" id="vdJ-c5-Ftc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -36,12 +33,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.70562015433081138" green="1" blue="0.90294318889198633" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="BtC-VX-Ijh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5br-GY-OtU"/>
-                            <constraint firstItem="voX-pE-DuV" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="94" id="Gyd-Ek-hoa"/>
-                            <constraint firstItem="voX-pE-DuV" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="8" id="LdZ-hI-j7i"/>
-                            <constraint firstItem="BtC-VX-Ijh" firstAttribute="centerX" secondItem="voX-pE-DuV" secondAttribute="centerX" id="ZQU-Ze-UUe"/>
-                            <constraint firstItem="BtC-VX-Ijh" firstAttribute="top" secondItem="voX-pE-DuV" secondAttribute="bottom" constant="65" id="iW8-68-Gal"/>
-                            <constraint firstItem="BtC-VX-Ijh" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="l0V-Sc-pov"/>
+                            <constraint firstItem="BtC-VX-Ijh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5XS-ca-dlT"/>
+                            <constraint firstItem="BtC-VX-Ijh" firstAttribute="top" secondItem="voX-pE-DuV" secondAttribute="bottom" constant="65" id="6TT-br-bgw"/>
+                            <constraint firstItem="voX-pE-DuV" firstAttribute="centerX" secondItem="BtC-VX-Ijh" secondAttribute="centerX" id="eQ4-VA-we5"/>
+                            <constraint firstItem="voX-pE-DuV" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="73" id="h9i-7b-ChG"/>
+                            <constraint firstItem="voX-pE-DuV" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="94" id="mez-Ch-yE7"/>
+                            <constraint firstItem="voX-pE-DuV" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="rzm-9O-upl"/>
+                            <constraint firstItem="BtC-VX-Ijh" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="xuI-oi-b4c"/>
                         </constraints>
                     </view>
                 </viewController>
