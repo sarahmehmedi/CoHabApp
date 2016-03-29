@@ -9,16 +9,18 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var userEmailTextField: UITextField!
     @IBOutlet weak var userPasswordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
-
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true);
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -39,83 +41,71 @@ class LoginViewController: UIViewController {
     
     
     // This is the function that is triggered when you tap on the login button
-    // Basically it will tell you whether your sign in was valid or invalid and then will 
+    // Basically it will tell you whether your sign in was valid or invalid and then will
     // Change the status of the app to logged in
     @IBAction func loginButtonTapped(sender: AnyObject) {
         
         let userEmail = userEmailTextField.text
         let userPassword = userPasswordTextField.text
         
-        let userEmailStored = NSUserDefaults.standardUserDefaults().stringForKey("userEmail");
-        let userPasswordStored = NSUserDefaults.standardUserDefaults().stringForKey("userPassword");
         
-        if(userEmailStored == userEmail){
-            if (userPasswordStored == userPassword){
-                //login succesful
-                
-                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isUserLoggedIn");
+        if(userEmail?.isEmpty == true || userPassword?.isEmpty == true){
+            let myAlert = UIAlertController(title: "Alert", message: "You left email or password blank! Please try again.", preferredStyle: UIAlertControllerStyle.Alert);
+            let okAction = UIAlertAction(title: "Ok", style:UIAlertActionStyle.Default, handler:nil);
+            myAlert.addAction(okAction);
+            self.presentViewController(myAlert,animated:true, completion:nil);
+        }
+        
+        //send user data to server side
+        let myUrl = NSURL(string: "http://mysql.cs.luc.edu/~smehmedi/CohabApp/userLogin.php");
+        let request = NSMutableURLRequest(URL:myUrl!);
+        request.HTTPMethod = "POST";
+        
+        let postString = "email=\(userEmail!)&password=\(userPassword!)";
+        
+        print(postString);
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding);
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
+            data, response, error -> Void in
             
-            NSUserDefaults.standardUserDefaults().synchronize();
-                self.dismissViewControllerAnimated(true, completion: nil);
+            if error != nil{
+                print("error=\(error)")
+                return
             }
-            else {displayMyAlertMessage("Invalid Password");}
+            
+            do{
+                if let parseJSON = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as? NSDictionary{
+                    
+                    let resultValue = parseJSON["status"] as! String;
+                    print("result: \(resultValue)")
+                    
+                    if (resultValue == "Success"){
+                        //successful login
+                        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isUserLoggedIn");
+                        NSUserDefaults.standardUserDefaults().synchronize();
+                        // self.dismissViewControllerAnimated(true, completion: nil);
+                    }
+                    else if (resultValue == "error"){
+                        //                        let loginViewController = rootViewController as Cohab.LoginViewController;
+                        //                        let activeViewCont = loginViewController.visibleViewController;
+                        
+                        //idk why this alert popup doesnt work so i commented it out for now - sarah
+                        
+                        /*
+                         let errorAlert = UIAlertController(title: "Alert", message: "You left email or password blank! Please try again.", preferredStyle: UIAlertControllerStyle.Alert);
+                         let returnAction = UIAlertAction(title: "Ok", style:UIAlertActionStyle.Default, handler:nil);
+                         errorAlert.addAction(returnAction);
+                         self.presentViewController(errorAlert,animated:true, completion:nil);
+                         */
+                        self.dismissViewControllerAnimated(false, completion: nil);
+                        
+                    }
+                }
+            } catch let error as NSError{
+                print(error)
+            }
         }
-        else {displayMyAlertMessage("Invalid Username");
-        }
-
+        task.resume();
     }
 }
-//
-//        if(userEmail.isEmpty || userPassword.isEmpty) { return;}
-//        
-//        //send user data to server side
-//        let myUrl = NSURL(string: "http://mysql.cs.luc.edu/~smehmedi/CohabApp/userLogin.php");
-//        let request = NSMutableURLRequest(URL:myUrl!);
-//        request.HTTPMethod = "POST";
-//        
-//        let postString = "email=\(userEmail)&password=\(userPassword)";
-//        
-//        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding);
-//        
-//        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
-//            data, response, error -> Void in
-//            
-//            if error != nil{
-//                print("error=\(error)")
-//                return
-//            }
-//            
-//            do{
-//                
-//                if let parseJSON = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary{
-//                    
-//                    print(error!.localizedDescription)
-//                    print("json: \(parseJSON)");
-//                    
-//                    let resultValue = parseJSON["status"] as! String;
-//                    print("result: \(resultValue)")
-//                    
-//                    if(resultValue=="Success"){
-//                        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isUserLoggedIn");
-//                        NSUserDefaults.standardUserDefaults().synchronize();
-//                        
-//                        self.dismissViewControllerAnimated(true, completion: nil);
-//                    })
-//                    }
-//                } catch let error as NSError{
-//                    print(error)
-//            }
-//            }
-//        
-//        task.resume()
-//    }
-//}
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */

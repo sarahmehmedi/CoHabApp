@@ -47,7 +47,7 @@
         public function getUserDetailsWithPassword($email, $password)
         {
             $returnValue = array();
-            $sql = "select email from cohab where email='" . $email . "' and user_password='" .$password . "'";
+            $sql = "select email from cohab where email='" .$email. "' and password='" .$password. "'";
             
             $result = $this->conn->query($sql);
             if ($result != null && (mysqli_num_rows($result) >= 1)) {
