@@ -26,15 +26,14 @@ class ViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         
         let isUserLoggedIn = NSUserDefaults.standardUserDefaults().boolForKey("isUserLoggedIn");
-        if (!isUserLoggedIn){
+        NSUserDefaults.standardUserDefaults().synchronize();
+        if (isUserLoggedIn == false){
         self.performSegueWithIdentifier("loginView", sender: self)
         }
-    }
-    // This is what happens when you logout, it just changed the key to false and switches you to the login screen
-    @IBAction func logoutButtonTapped(sender: AnyObject) {
-        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "isUserLoggedIn");
-        NSUserDefaults.standardUserDefaults().synchronize();
-        self.performSegueWithIdentifier("loginView", sender: self)
+        if (isUserLoggedIn == true)
+        {
+            self.performSegueWithIdentifier("homeView", sender: self)
+        }
     }
 }
 

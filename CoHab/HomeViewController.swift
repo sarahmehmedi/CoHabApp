@@ -1,4 +1,3 @@
-
 //
 //  HomeViewController.swift
 //  CoHab
@@ -9,11 +8,11 @@
 
 import UIKit
 
+
 class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
     }
     
@@ -33,6 +32,16 @@ class HomeViewController: UIViewController {
         myAlert.addAction(okAction);
         
         self.presentViewController(myAlert, animated: true, completion: nil);
+    }
+    
+
+    
+    
+    // This is what happens when you logout, it just changed the key to false and switches you to the login screen
+    @IBAction func logoutButtonTapped(sender: AnyObject) {
+        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "isUserLoggedIn");
+        NSUserDefaults.standardUserDefaults().synchronize();
+        self.performSegueWithIdentifier("loginview", sender: self)
     }
     
     @IBAction func onMyScheduleClick(sender: AnyObject) {
