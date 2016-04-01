@@ -11,6 +11,7 @@ import BTNavigationDropdownMenu
 
 class HomeViewController: UIViewController {
     
+    
     var menuView: BTNavigationDropdownMenu!
     
     override func viewDidLoad() {
@@ -34,6 +35,9 @@ class HomeViewController: UIViewController {
         menuView.maskBackgroundOpacity = 0.3
         menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
             print("Did select item at index: \(indexPath)")
+            if (indexPath == 2){
+                self.performSegueWithIdentifier("calendarView", sender: self)
+            }
         }
         self.navigationItem.titleView = menuView
         // Do any additional setup after loading the view.

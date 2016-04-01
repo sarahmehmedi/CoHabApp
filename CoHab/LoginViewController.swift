@@ -97,8 +97,9 @@ class LoginViewController: UIViewController {
                          let returnAction = UIAlertAction(title: "Ok", style:UIAlertActionStyle.Default, handler:nil);
                          errorAlert.addAction(returnAction);
                          self.presentViewController(errorAlert,animated:true, completion:nil);
+                         */
                         self.dismissViewControllerAnimated(false, completion: nil);
-                        */
+                        
                     }
                 }
             } catch let error as NSError{
