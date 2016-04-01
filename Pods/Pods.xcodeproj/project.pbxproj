@@ -7,57 +7,96 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01C57309E2EF9E7025552938EFD9E244 /* BTNavigationDropdownMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A4FB14486A7F2E1CFE0EB65C82E60 /* BTNavigationDropdownMenu-dummy.m */; };
-		02FB512C984962CF03D5183C7108132C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		064537A4D2690D42BA12CB6F36EA8914 /* BTNavigationDropdownMenu.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 44ECC1F20F225DA56CC2FEE7EFA2AFAC /* BTNavigationDropdownMenu.bundle */; };
-		31375D677778F2B217957BFB3AAAB316 /* BTNavigationDropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6362D864FA2D3C24243FBF8536174C /* BTNavigationDropdownMenu.swift */; };
-		3885F7FE1358F2AC1C4D091DA3409F1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		752E6B42E6206B1EA6B016B19AAF4652 /* BTNavigationDropdownMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 752F8BCF5187145076ADA7FEE85A65A7 /* BTNavigationDropdownMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C471EBD60E80F713D163BC167871C0B9 /* Pods-CoHab-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C89CAB855CF1545104D18EBC9A06DA79 /* Pods-CoHab-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F19FEE832203451C2547EC635A23A240 /* Pods-CoHab-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E775D47EB2C30CF569E1E2197819A009 /* Pods-CoHab-dummy.m */; };
+		01C57309E2EF9E7025552938EFD9E244 /* BTNavigationDropdownMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D106865BAEC936D695E44132D87C1BEF /* BTNavigationDropdownMenu-dummy.m */; };
+		02FB512C984962CF03D5183C7108132C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91413329813FA6FE5A78842159E69621 /* Foundation.framework */; };
+		064537A4D2690D42BA12CB6F36EA8914 /* BTNavigationDropdownMenu.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 158DBDC804AF25BF2E603FF2A22A8BAC /* BTNavigationDropdownMenu.bundle */; };
+		1A7BEE2CEE52368CAE640604A0872196 /* CalendarMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2937C8CBCA8DE9FE922EF7EE184D99C0 /* CalendarMonthView.swift */; };
+		2EA038765594799F8DBFA4F73326235A /* Pods-CoHab-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E775D47EB2C30CF569E1E2197819A009 /* Pods-CoHab-dummy.m */; };
+		31375D677778F2B217957BFB3AAAB316 /* BTNavigationDropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A56CD18AED22DB69B51FC6ADB242F4 /* BTNavigationDropdownMenu.swift */; };
+		396118424BC25B49E93519C4D68B5277 /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2447DD3BD801C915D0A89DDE0F1CE69 /* EventStore.swift */; };
+		4D920851135A10C5642DD6D457CAA932 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D58158B7F5CE50FC6C92BDDBB526EB5 /* CalendarView.swift */; };
+		52623F0848213CEEBC82B099D384316E /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8092A8EDC7A7135FE27F05BE17FCEC5 /* Month.swift */; };
+		6A23C42AD39A87F8D7C6E856FDB880F9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DE615671731BF3AEFB3CB1F984FA8F /* UIKit.framework */; };
+		6EB08EB2E2569AC794F33355718EFDF5 /* Pods-CoHab-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C89CAB855CF1545104D18EBC9A06DA79 /* Pods-CoHab-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		752E6B42E6206B1EA6B016B19AAF4652 /* BTNavigationDropdownMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 97C9B8FB52EFEF5A4AA6B8B8C6F7D7F3 /* BTNavigationDropdownMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7BD33E8470601E27F9C9AE74A2B11143 /* CalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0267B2FF88C9CB93BB4E5625128189FD /* CalendarDayView.swift */; };
+		955D55401890F66999D296AA346F9AAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91413329813FA6FE5A78842159E69621 /* Foundation.framework */; };
+		9E970AA4C47A5A6F1C1EEB8937FC47FC /* TTEventKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BAF6C88185970179951E91B398D9C613 /* TTEventKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1136AFA7D8569F2503EB8F5F50B80C5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E642B1A057ADA2ABEF90BE2417F349C1 /* QuartzCore.framework */; };
+		C5752757FB7D8D61B830CF18B8AAFBC9 /* EventUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF567AD3A9E3C3F8D39363E008CD34D /* EventUI.swift */; };
+		CE39C89C858479871708CD9BFA5DE42B /* CalendarConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD8A761425056C2C46C159AFBDDF432 /* CalendarConfig.swift */; };
+		D3A22224813F1EB2DC96AFCBFE288285 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = B237019DCD28A726A7A4F58AB8D58BC6 /* Globals.swift */; };
+		EE1FF4E18A14DACEB6B7D16CBC55D65B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91413329813FA6FE5A78842159E69621 /* Foundation.framework */; };
+		F4B2FF66C3C5B3FEE3DCB92DFC8B93DE /* TTEventKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F9E6B0EF875D975AD0DE95727424EB2 /* TTEventKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FC704AA963DDE6CFB54F2287C9909CC9 /* TTEventKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B2CF914010FC27858D210BDE2627CF /* TTEventKit-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		310EC5B6DD79E2F75362AA65B82ACCDE /* PBXContainerItemProxy */ = {
+		3096E90C86167611A8EC903F3D76253C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = FD23F1DA220A44C7E84F356B64871271;
 			remoteInfo = BTNavigationDropdownMenu;
 		};
+		FC28AE1874046051AF6B6231362D0C5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3DCA2BD4B3637F877CA9EFC0744A94C2;
+			remoteInfo = TTEventKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0267B2FF88C9CB93BB4E5625128189FD /* CalendarDayView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarDayView.swift; path = TTEventKit/TTEventKit/CalendarDayView.swift; sourceTree = "<group>"; };
+		0F9E6B0EF875D975AD0DE95727424EB2 /* TTEventKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TTEventKit-umbrella.h"; sourceTree = "<group>"; };
+		158DBDC804AF25BF2E603FF2A22A8BAC /* BTNavigationDropdownMenu.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = BTNavigationDropdownMenu.bundle; path = Source/BTNavigationDropdownMenu.bundle; sourceTree = "<group>"; };
+		2937C8CBCA8DE9FE922EF7EE184D99C0 /* CalendarMonthView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarMonthView.swift; path = TTEventKit/TTEventKit/CalendarMonthView.swift; sourceTree = "<group>"; };
+		29CA5D34D62BF3D45395DBCE87D92C92 /* BTNavigationDropdownMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BTNavigationDropdownMenu-prefix.pch"; sourceTree = "<group>"; };
 		30C0B118D29DA8EA803F68B9A50485E5 /* Pods-CoHab-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CoHab-frameworks.sh"; sourceTree = "<group>"; };
+		33DA5EEF58AB01279DCABA93CB86C5C4 /* BTNavigationDropdownMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = BTNavigationDropdownMenu.modulemap; sourceTree = "<group>"; };
 		34A37066179F21DA6E2ED4C0F6262A0D /* Pods-CoHab-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CoHab-resources.sh"; sourceTree = "<group>"; };
-		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		44ECC1F20F225DA56CC2FEE7EFA2AFAC /* BTNavigationDropdownMenu.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = BTNavigationDropdownMenu.bundle; path = Source/BTNavigationDropdownMenu.bundle; sourceTree = "<group>"; };
-		4EEBA5D33BD72618C29A1DD499E5D2B0 /* Pods_CoHab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoHab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F0A4FB14486A7F2E1CFE0EB65C82E60 /* BTNavigationDropdownMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BTNavigationDropdownMenu-dummy.m"; sourceTree = "<group>"; };
-		65FF64EB4B2A787E25995B298D789724 /* BTNavigationDropdownMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BTNavigationDropdownMenu.xcconfig; sourceTree = "<group>"; };
-		752F8BCF5187145076ADA7FEE85A65A7 /* BTNavigationDropdownMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BTNavigationDropdownMenu-umbrella.h"; sourceTree = "<group>"; };
-		7D6362D864FA2D3C24243FBF8536174C /* BTNavigationDropdownMenu.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BTNavigationDropdownMenu.swift; path = Source/BTNavigationDropdownMenu.swift; sourceTree = "<group>"; };
-		9040FEA03A1CEE4BD06E5D64CDBA7E3A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		442821EA9508B9EC44109D68410053E7 /* TTEventKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TTEventKit.xcconfig; sourceTree = "<group>"; };
+		5FBDEBE0FFB79A3FE99B4724C0DCEF8A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D58158B7F5CE50FC6C92BDDBB526EB5 /* CalendarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarView.swift; path = TTEventKit/TTEventKit/CalendarView.swift; sourceTree = "<group>"; };
+		784E688C154A61467B3381E255ADF38D /* BTNavigationDropdownMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BTNavigationDropdownMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FF567AD3A9E3C3F8D39363E008CD34D /* EventUI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventUI.swift; path = TTEventKit/TTEventKit/EventUI.swift; sourceTree = "<group>"; };
+		82B2CF914010FC27858D210BDE2627CF /* TTEventKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TTEventKit-dummy.m"; sourceTree = "<group>"; };
+		88A56CD18AED22DB69B51FC6ADB242F4 /* BTNavigationDropdownMenu.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BTNavigationDropdownMenu.swift; path = Source/BTNavigationDropdownMenu.swift; sourceTree = "<group>"; };
+		8CFE41C7202E1874EFDE29765726100F /* Pods_CoHab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoHab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91413329813FA6FE5A78842159E69621 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		97C9B8FB52EFEF5A4AA6B8B8C6F7D7F3 /* BTNavigationDropdownMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BTNavigationDropdownMenu-umbrella.h"; sourceTree = "<group>"; };
 		A02BE6BBC54983618A174678E8901504 /* Pods-CoHab-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CoHab-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A8092A8EDC7A7135FE27F05BE17FCEC5 /* Month.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Month.swift; path = TTEventKit/TTEventKit/Month.swift; sourceTree = "<group>"; };
+		AFD8A761425056C2C46C159AFBDDF432 /* CalendarConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarConfig.swift; path = TTEventKit/TTEventKit/CalendarConfig.swift; sourceTree = "<group>"; };
+		B237019DCD28A726A7A4F58AB8D58BC6 /* Globals.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Globals.swift; path = TTEventKit/TTEventKit/Globals.swift; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BAF6C88185970179951E91B398D9C613 /* TTEventKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TTEventKit.h; path = TTEventKit/TTEventKit/TTEventKit.h; sourceTree = "<group>"; };
 		BC25B6CBDFCCE6F7562B59A9BACEAEF7 /* Pods-CoHab-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoHab-acknowledgements.plist"; sourceTree = "<group>"; };
-		BE753EC5C64AE9CCF1F8093F43E1A57F /* BTNavigationDropdownMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = BTNavigationDropdownMenu.modulemap; sourceTree = "<group>"; };
+		C2447DD3BD801C915D0A89DDE0F1CE69 /* EventStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventStore.swift; path = TTEventKit/TTEventKit/EventStore.swift; sourceTree = "<group>"; };
+		C3D553B875B389D56086740881C80585 /* TTEventKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TTEventKit.modulemap; sourceTree = "<group>"; };
+		C4D7B44C43D7DB2C1A8260527B6BAAE8 /* TTEventKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TTEventKit-prefix.pch"; sourceTree = "<group>"; };
+		C5BB414DEFDB1BBE5AD557FAD2312CF4 /* BTNavigationDropdownMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BTNavigationDropdownMenu.xcconfig; sourceTree = "<group>"; };
 		C89CAB855CF1545104D18EBC9A06DA79 /* Pods-CoHab-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CoHab-umbrella.h"; sourceTree = "<group>"; };
+		CA8685102D247C26E92CCAF875D409D8 /* TTEventKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TTEventKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D106865BAEC936D695E44132D87C1BEF /* BTNavigationDropdownMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BTNavigationDropdownMenu-dummy.m"; sourceTree = "<group>"; };
 		D6ACF4A69DD73F6D127F521A950A5936 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DA7104180BF1BF74D63DD3A789D21F5C /* BTNavigationDropdownMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BTNavigationDropdownMenu-prefix.pch"; sourceTree = "<group>"; };
+		D9DE615671731BF3AEFB3CB1F984FA8F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		DD7CD5DEA01A30B61E78C0F38876F00B /* Pods-CoHab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoHab.release.xcconfig"; sourceTree = "<group>"; };
+		E642B1A057ADA2ABEF90BE2417F349C1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		E775D47EB2C30CF569E1E2197819A009 /* Pods-CoHab-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CoHab-dummy.m"; sourceTree = "<group>"; };
 		EDA70C284DA27A4DA05A5B7A3713434C /* Pods-CoHab.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-CoHab.modulemap"; sourceTree = "<group>"; };
-		F568A6B6B3A00114FF23176CBBCEA92A /* BTNavigationDropdownMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BTNavigationDropdownMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAA75273D6615B7DEFD747F4CABBF53F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB562C42539C7ACAB1C9C73CF129C1CA /* Pods-CoHab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoHab.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4CA6A843154EC13E7E25AC06FB327222 /* Frameworks */ = {
+		52C969B54A084AEB9EF299973A45076B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3885F7FE1358F2AC1C4D091DA3409F1C /* Foundation.framework in Frameworks */,
+				EE1FF4E18A14DACEB6B7D16CBC55D65B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,16 +108,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E2723ED5560051CD437FA34282B734D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				955D55401890F66999D296AA346F9AAE /* Foundation.framework in Frameworks */,
+				A1136AFA7D8569F2503EB8F5F50B80C5 /* QuartzCore.framework in Frameworks */,
+				6A23C42AD39A87F8D7C6E856FDB880F9 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1B3BBAB8A514AF9C2AAD86E1C13B2AB1 /* Products */ = {
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F568A6B6B3A00114FF23176CBBCEA92A /* BTNavigationDropdownMenu.framework */,
-				4EEBA5D33BD72618C29A1DD499E5D2B0 /* Pods_CoHab.framework */,
+				DA23025FEDA7F7FE2AACB2532BD80D14 /* iOS */,
 			);
-			name = Products;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		2B04C35EB24759491DCDD6FB58DC70F3 /* Targets Support Files */ = {
@@ -89,22 +137,27 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		50A6A50BC8331D4B2135949784EF6FC6 /* BTNavigationDropdownMenu */ = {
+		467835967AB086A83ED71775A7DAEC9D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7D6362D864FA2D3C24243FBF8536174C /* BTNavigationDropdownMenu.swift */,
-				59391CD8AE191507CFA3C89D5772084A /* Resources */,
-				A3E1EDC54EE51249AB73C780D3FE2AD3 /* Support Files */,
+				B4CE1FA3CA8CD37497CCCA33D420D4FC /* BTNavigationDropdownMenu */,
+				C7BB3EDFBDB0D2BC02E71FBCA0AD9118 /* TTEventKit */,
 			);
-			path = BTNavigationDropdownMenu;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		59391CD8AE191507CFA3C89D5772084A /* Resources */ = {
+		501A1CBE34708C3BDA7B7EE416AA34F2 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				44ECC1F20F225DA56CC2FEE7EFA2AFAC /* BTNavigationDropdownMenu.bundle */,
+				33DA5EEF58AB01279DCABA93CB86C5C4 /* BTNavigationDropdownMenu.modulemap */,
+				C5BB414DEFDB1BBE5AD557FAD2312CF4 /* BTNavigationDropdownMenu.xcconfig */,
+				D106865BAEC936D695E44132D87C1BEF /* BTNavigationDropdownMenu-dummy.m */,
+				29CA5D34D62BF3D45395DBCE87D92C92 /* BTNavigationDropdownMenu-prefix.pch */,
+				97C9B8FB52EFEF5A4AA6B8B8C6F7D7F3 /* BTNavigationDropdownMenu-umbrella.h */,
+				FAA75273D6615B7DEFD747F4CABBF53F /* Info.plist */,
 			);
-			name = Resources;
+			name = "Support Files";
+			path = "../Target Support Files/BTNavigationDropdownMenu";
 			sourceTree = "<group>";
 		};
 		62EE0378AF07E588DD3041BBA20BAF02 /* Pods-CoHab */ = {
@@ -125,63 +178,95 @@
 			path = "Target Support Files/Pods-CoHab";
 			sourceTree = "<group>";
 		};
-		6E1E9424BEC08A0763D15F563D7803F3 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				50A6A50BC8331D4B2135949784EF6FC6 /* BTNavigationDropdownMenu */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				6E1E9424BEC08A0763D15F563D7803F3 /* Pods */,
-				1B3BBAB8A514AF9C2AAD86E1C13B2AB1 /* Products */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				467835967AB086A83ED71775A7DAEC9D /* Pods */,
+				F8C021911BBA6C2487E2E9BD1B82C207 /* Products */,
 				2B04C35EB24759491DCDD6FB58DC70F3 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		A3E1EDC54EE51249AB73C780D3FE2AD3 /* Support Files */ = {
+		B0B1B71F34006D39D3976385862066C8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BE753EC5C64AE9CCF1F8093F43E1A57F /* BTNavigationDropdownMenu.modulemap */,
-				65FF64EB4B2A787E25995B298D789724 /* BTNavigationDropdownMenu.xcconfig */,
-				4F0A4FB14486A7F2E1CFE0EB65C82E60 /* BTNavigationDropdownMenu-dummy.m */,
-				DA7104180BF1BF74D63DD3A789D21F5C /* BTNavigationDropdownMenu-prefix.pch */,
-				752F8BCF5187145076ADA7FEE85A65A7 /* BTNavigationDropdownMenu-umbrella.h */,
-				9040FEA03A1CEE4BD06E5D64CDBA7E3A /* Info.plist */,
+				158DBDC804AF25BF2E603FF2A22A8BAC /* BTNavigationDropdownMenu.bundle */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/BTNavigationDropdownMenu";
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		B4CE1FA3CA8CD37497CCCA33D420D4FC /* BTNavigationDropdownMenu */ = {
 			isa = PBXGroup;
 			children = (
-				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
+				88A56CD18AED22DB69B51FC6ADB242F4 /* BTNavigationDropdownMenu.swift */,
+				B0B1B71F34006D39D3976385862066C8 /* Resources */,
+				501A1CBE34708C3BDA7B7EE416AA34F2 /* Support Files */,
 			);
-			name = Frameworks;
+			path = BTNavigationDropdownMenu;
 			sourceTree = "<group>";
 		};
-		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
+		C7BB3EDFBDB0D2BC02E71FBCA0AD9118 /* TTEventKit */ = {
 			isa = PBXGroup;
 			children = (
-				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
+				AFD8A761425056C2C46C159AFBDDF432 /* CalendarConfig.swift */,
+				0267B2FF88C9CB93BB4E5625128189FD /* CalendarDayView.swift */,
+				2937C8CBCA8DE9FE922EF7EE184D99C0 /* CalendarMonthView.swift */,
+				6D58158B7F5CE50FC6C92BDDBB526EB5 /* CalendarView.swift */,
+				C2447DD3BD801C915D0A89DDE0F1CE69 /* EventStore.swift */,
+				7FF567AD3A9E3C3F8D39363E008CD34D /* EventUI.swift */,
+				B237019DCD28A726A7A4F58AB8D58BC6 /* Globals.swift */,
+				A8092A8EDC7A7135FE27F05BE17FCEC5 /* Month.swift */,
+				BAF6C88185970179951E91B398D9C613 /* TTEventKit.h */,
+				EE83B4A408EB4F307347D4E0B049E90D /* Support Files */,
+			);
+			path = TTEventKit;
+			sourceTree = "<group>";
+		};
+		DA23025FEDA7F7FE2AACB2532BD80D14 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				91413329813FA6FE5A78842159E69621 /* Foundation.framework */,
+				E642B1A057ADA2ABEF90BE2417F349C1 /* QuartzCore.framework */,
+				D9DE615671731BF3AEFB3CB1F984FA8F /* UIKit.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		EE83B4A408EB4F307347D4E0B049E90D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5FBDEBE0FFB79A3FE99B4724C0DCEF8A /* Info.plist */,
+				C3D553B875B389D56086740881C80585 /* TTEventKit.modulemap */,
+				442821EA9508B9EC44109D68410053E7 /* TTEventKit.xcconfig */,
+				82B2CF914010FC27858D210BDE2627CF /* TTEventKit-dummy.m */,
+				C4D7B44C43D7DB2C1A8260527B6BAAE8 /* TTEventKit-prefix.pch */,
+				0F9E6B0EF875D975AD0DE95727424EB2 /* TTEventKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/TTEventKit";
+			sourceTree = "<group>";
+		};
+		F8C021911BBA6C2487E2E9BD1B82C207 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				784E688C154A61467B3381E255ADF38D /* BTNavigationDropdownMenu.framework */,
+				8CFE41C7202E1874EFDE29765726100F /* Pods_CoHab.framework */,
+				CA8685102D247C26E92CCAF875D409D8 /* TTEventKit.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		CE04B115FF51282254FA843FC647C15A /* Headers */ = {
+		BFF8AA1A00592896E1BD13C5FAA8CF53 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C471EBD60E80F713D163BC167871C0B9 /* Pods-CoHab-umbrella.h in Headers */,
+				F4B2FF66C3C5B3FEE3DCB92DFC8B93DE /* TTEventKit-umbrella.h in Headers */,
+				9E970AA4C47A5A6F1C1EEB8937FC47FC /* TTEventKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,25 +278,51 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FB7F34C49092AA7216E55BA230032A26 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EB08EB2E2569AC794F33355718EFDF5 /* Pods-CoHab-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		D1BDE6CA82918C48616C9CCA5B3E813B /* Pods-CoHab */ = {
+		3DCA2BD4B3637F877CA9EFC0744A94C2 /* TTEventKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AAB9BDF2961FA2B6DAA11769A50E9878 /* Build configuration list for PBXNativeTarget "Pods-CoHab" */;
+			buildConfigurationList = 816AD41FC8715BD9D5A5085E7D79CFBE /* Build configuration list for PBXNativeTarget "TTEventKit" */;
 			buildPhases = (
-				69924A20ED7766B26E465C12B5503FF0 /* Sources */,
-				4CA6A843154EC13E7E25AC06FB327222 /* Frameworks */,
-				CE04B115FF51282254FA843FC647C15A /* Headers */,
+				83DBD7E0FE453B237E10D3167FB2A31E /* Sources */,
+				E2723ED5560051CD437FA34282B734D9 /* Frameworks */,
+				BFF8AA1A00592896E1BD13C5FAA8CF53 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				94848C05028D66A51A994AE229C73898 /* PBXTargetDependency */,
+			);
+			name = TTEventKit;
+			productName = TTEventKit;
+			productReference = CA8685102D247C26E92CCAF875D409D8 /* TTEventKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7132AB0F309610DF4DB12BF1D9BF8AE2 /* Pods-CoHab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A7E9BD14EA6BFAED3FC240166298DF7 /* Build configuration list for PBXNativeTarget "Pods-CoHab" */;
+			buildPhases = (
+				CC36379D1BBE20C3B002837F4DB9D966 /* Sources */,
+				52C969B54A084AEB9EF299973A45076B /* Frameworks */,
+				FB7F34C49092AA7216E55BA230032A26 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A078CE0FC45397B755FD0295F2CA70CB /* PBXTargetDependency */,
+				67FADFC577E8B3AA4DF7372BD875D538 /* PBXTargetDependency */,
 			);
 			name = "Pods-CoHab";
 			productName = "Pods-CoHab";
-			productReference = 4EEBA5D33BD72618C29A1DD499E5D2B0 /* Pods_CoHab.framework */;
+			productReference = 8CFE41C7202E1874EFDE29765726100F /* Pods_CoHab.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		FD23F1DA220A44C7E84F356B64871271 /* BTNavigationDropdownMenu */ = {
@@ -229,7 +340,7 @@
 			);
 			name = BTNavigationDropdownMenu;
 			productName = BTNavigationDropdownMenu;
-			productReference = F568A6B6B3A00114FF23176CBBCEA92A /* BTNavigationDropdownMenu.framework */;
+			productReference = 784E688C154A61467B3381E255ADF38D /* BTNavigationDropdownMenu.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -249,12 +360,13 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 1B3BBAB8A514AF9C2AAD86E1C13B2AB1 /* Products */;
+			productRefGroup = F8C021911BBA6C2487E2E9BD1B82C207 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				FD23F1DA220A44C7E84F356B64871271 /* BTNavigationDropdownMenu */,
-				D1BDE6CA82918C48616C9CCA5B3E813B /* Pods-CoHab */,
+				7132AB0F309610DF4DB12BF1D9BF8AE2 /* Pods-CoHab */,
+				3DCA2BD4B3637F877CA9EFC0744A94C2 /* TTEventKit */,
 			);
 		};
 /* End PBXProject section */
@@ -280,29 +392,51 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		69924A20ED7766B26E465C12B5503FF0 /* Sources */ = {
+		83DBD7E0FE453B237E10D3167FB2A31E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F19FEE832203451C2547EC635A23A240 /* Pods-CoHab-dummy.m in Sources */,
+				CE39C89C858479871708CD9BFA5DE42B /* CalendarConfig.swift in Sources */,
+				7BD33E8470601E27F9C9AE74A2B11143 /* CalendarDayView.swift in Sources */,
+				1A7BEE2CEE52368CAE640604A0872196 /* CalendarMonthView.swift in Sources */,
+				4D920851135A10C5642DD6D457CAA932 /* CalendarView.swift in Sources */,
+				396118424BC25B49E93519C4D68B5277 /* EventStore.swift in Sources */,
+				C5752757FB7D8D61B830CF18B8AAFBC9 /* EventUI.swift in Sources */,
+				D3A22224813F1EB2DC96AFCBFE288285 /* Globals.swift in Sources */,
+				52623F0848213CEEBC82B099D384316E /* Month.swift in Sources */,
+				FC704AA963DDE6CFB54F2287C9909CC9 /* TTEventKit-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC36379D1BBE20C3B002837F4DB9D966 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EA038765594799F8DBFA4F73326235A /* Pods-CoHab-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		94848C05028D66A51A994AE229C73898 /* PBXTargetDependency */ = {
+		67FADFC577E8B3AA4DF7372BD875D538 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TTEventKit;
+			target = 3DCA2BD4B3637F877CA9EFC0744A94C2 /* TTEventKit */;
+			targetProxy = FC28AE1874046051AF6B6231362D0C5C /* PBXContainerItemProxy */;
+		};
+		A078CE0FC45397B755FD0295F2CA70CB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = BTNavigationDropdownMenu;
 			target = FD23F1DA220A44C7E84F356B64871271 /* BTNavigationDropdownMenu */;
-			targetProxy = 310EC5B6DD79E2F75362AA65B82ACCDE /* PBXContainerItemProxy */;
+			targetProxy = 3096E90C86167611A8EC903F3D76253C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		14628E76FF1B677B229C300E1C496170 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 65FF64EB4B2A787E25995B298D789724 /* BTNavigationDropdownMenu.xcconfig */;
+			baseConfigurationReference = C5BB414DEFDB1BBE5AD557FAD2312CF4 /* BTNavigationDropdownMenu.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -328,7 +462,38 @@
 			};
 			name = Debug;
 		};
-		7C33ACC536EC857E390DEEA3F3E1A1DE /* Release */ = {
+		2F46343E3802502A4A44AAB7D7B8F58B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB562C42539C7ACAB1C9C73CF129C1CA /* Pods-CoHab.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CoHab/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CoHab/Pods-CoHab.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_CoHab;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		45CFBE7F43B0369782D5940F240D0A46 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DD7CD5DEA01A30B61E78C0F38876F00B /* Pods-CoHab.release.xcconfig */;
 			buildSettings = {
@@ -431,9 +596,9 @@
 			};
 			name = Release;
 		};
-		D1F2C0A9AB24E13E503467756AD7E904 /* Debug */ = {
+		EDB1747593A2BD92E1E726F5B36BD0EB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB562C42539C7ACAB1C9C73CF129C1CA /* Pods-CoHab.debug.xcconfig */;
+			baseConfigurationReference = 442821EA9508B9EC44109D68410053E7 /* TTEventKit.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -442,29 +607,25 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-CoHab/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/TTEventKit/TTEventKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TTEventKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CoHab/Pods-CoHab.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_CoHab;
+				MODULEMAP_FILE = "Target Support Files/TTEventKit/TTEventKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = TTEventKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		F5629E696A990F7FC6EEC1529AF77DC3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 65FF64EB4B2A787E25995B298D789724 /* BTNavigationDropdownMenu.xcconfig */;
+			baseConfigurationReference = C5BB414DEFDB1BBE5AD557FAD2312CF4 /* BTNavigationDropdownMenu.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -489,6 +650,34 @@
 			};
 			name = Release;
 		};
+		F7008EBD33B8CDF3C26E8C55C25DA79E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 442821EA9508B9EC44109D68410053E7 /* TTEventKit.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TTEventKit/TTEventKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TTEventKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TTEventKit/TTEventKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = TTEventKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -501,11 +690,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AAB9BDF2961FA2B6DAA11769A50E9878 /* Build configuration list for PBXNativeTarget "Pods-CoHab" */ = {
+		816AD41FC8715BD9D5A5085E7D79CFBE /* Build configuration list for PBXNativeTarget "TTEventKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D1F2C0A9AB24E13E503467756AD7E904 /* Debug */,
-				7C33ACC536EC857E390DEEA3F3E1A1DE /* Release */,
+				F7008EBD33B8CDF3C26E8C55C25DA79E /* Debug */,
+				EDB1747593A2BD92E1E726F5B36BD0EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A7E9BD14EA6BFAED3FC240166298DF7 /* Build configuration list for PBXNativeTarget "Pods-CoHab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F46343E3802502A4A44AAB7D7B8F58B /* Debug */,
+				45CFBE7F43B0369782D5940F240D0A46 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

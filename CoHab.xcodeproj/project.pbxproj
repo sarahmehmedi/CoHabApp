@@ -19,6 +19,7 @@
 		D17036FB1C9A1F17006E6061 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17036FA1C9A1F17006E6061 /* RegisterPageViewController.swift */; };
 		D17036FD1C9A7A08006E6061 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17036FC1C9A7A08006E6061 /* LoginViewController.swift */; };
 		D17037011C9B6D2C006E6061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D17037001C9B6D2C006E6061 /* Main.storyboard */; };
+		D18B8C211CAF2B4E003B3909 /* TTEventKit in CopyFiles */ = {isa = PBXBuildFile; fileRef = D18B8C201CAF2B4E003B3909 /* TTEventKit */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,16 @@
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D18B8C0C1CAF29E5003B3909 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D18B8C211CAF2B4E003B3909 /* TTEventKit in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +82,7 @@
 		D17036FA1C9A1F17006E6061 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 		D17036FC1C9A7A08006E6061 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D17037001C9B6D2C006E6061 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D18B8C201CAF2B4E003B3909 /* TTEventKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TTEventKit; sourceTree = "<group>"; };
 		F3C86A275860E41ED0DC26D4 /* Pods-CoHab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoHab.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoHab/Pods-CoHab.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +124,7 @@
 		D17036C01C9A1302006E6061 = {
 			isa = PBXGroup;
 			children = (
+				D18B8C201CAF2B4E003B3909 /* TTEventKit */,
 				D17036CB1C9A1302006E6061 /* CoHab */,
 				D17036E01C9A1302006E6061 /* CoHabTests */,
 				D17036EB1C9A1302006E6061 /* CoHabUITests */,
@@ -188,6 +201,7 @@
 				D143640B1CA1D673005F724F /* Copy Frameworks */,
 				2A857EDCF045BC4FE753ECC7 /* Embed Pods Frameworks */,
 				775778D5B11A1D0057EEE7A3 /* Copy Pods Resources */,
+				D18B8C0C1CAF29E5003B3909 /* CopyFiles */,
 			);
 			buildRules = (
 			);

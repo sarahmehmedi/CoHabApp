@@ -1,10 +1,13 @@
 PODS:
   - BTNavigationDropdownMenu (0.2.1)
+  - TTEventKit (0.0.2)
 
 DEPENDENCIES:
   - BTNavigationDropdownMenu
+  - TTEventKit
 
 SPEC CHECKSUMS:
   BTNavigationDropdownMenu: 9cf4060162c96510ee27c388412e28678320cdc0
+  TTEventKit: ca98039027f14f67da33f9d2405c0b9879dcab32
 
 COCOAPODS: 0.39.0

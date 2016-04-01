@@ -5,6 +5,7 @@
 
 target 'CoHab' do
 pod 'BTNavigationDropdownMenu'
+pod 'TTEventKit'
 end
 
 target 'CoHabTests' do
