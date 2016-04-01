@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7qY-jo-GkL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7qY-jo-GkL">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ECA602E1-079A-44D5-90A7-F8916A4EA5F8" translatesAutoresizingMaskIntoConstraints="NO" id="ilR-Uw-pc4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="379F6654-ED3C-4C91-81F9-0FFC263E9EF5" translatesAutoresizingMaskIntoConstraints="NO" id="ilR-Uw-pc4">
                                 <rect key="frame" x="114" y="81" width="373" height="413"/>
                             </imageView>
                         </subviews>
@@ -236,11 +236,30 @@
                     <connections>
                         <segue destination="qtt-Zh-LlY" kind="presentation" identifier="loginview" id="yKE-S6-h5r"/>
                         <segue destination="a5c-VW-WE4" kind="show" identifier="calendarView" id="xjb-vk-mLW"/>
+                        <segue destination="gmP-aN-BKZ" kind="show" identifier="billsView" id="F1e-ka-3Mc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwy-Uo-sc9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3196" y="316"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="UAD-k5-Atn">
+            <objects>
+                <viewController id="gmP-aN-BKZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gwj-4d-6Lj"/>
+                        <viewControllerLayoutGuide type="bottom" id="rNa-TM-Geo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hxm-aM-hOE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G8l-vi-RzY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3897" y="-353"/>
         </scene>
         <!--Calendar View Controller-->
         <scene sceneID="GJg-cc-tVr">
@@ -460,7 +479,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ECA602E1-079A-44D5-90A7-F8916A4EA5F8" width="612" height="792">
+        <image name="379F6654-ED3C-4C91-81F9-0FFC263E9EF5" width="612" height="792">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGSUpYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEAcI
 ERYbHCUmJysyNzo9Q0ZVJG51bGzUCQoLDA0ODxBWJGNsYXNzXE5TSW1hZ2VGbGFnc1ZOU1JlcHNXTlND

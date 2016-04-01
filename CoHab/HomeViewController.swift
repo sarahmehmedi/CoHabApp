@@ -38,6 +38,10 @@ class HomeViewController: UIViewController {
             if (indexPath == 2){
                 self.performSegueWithIdentifier("calendarView", sender: self)
             }
+            if (indexPath == 3){
+                self.performSegueWithIdentifier("billsView", sender: self)
+            }
+            
         }
         self.navigationItem.titleView = menuView
         // Do any additional setup after loading the view.
