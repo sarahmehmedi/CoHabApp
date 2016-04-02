@@ -14,6 +14,9 @@ class CalendarViewController: UIViewController, CalendarDelegate {
     
     @IBOutlet weak var calendarView: CalendarView!
     
+    @IBAction func calendarBackButton(sender: AnyObject) {
+        performSegueWithIdentifier("calendarBackButton", sender: self)
+    }
     @IBOutlet weak var header: UINavigationItem!
     
     override func viewDidLoad() {
@@ -23,7 +26,7 @@ class CalendarViewController: UIViewController, CalendarDelegate {
         calendarView.delegate = self
         
         calendarView.current.year = 2016
-        calendarView.current.month = 3
+        calendarView.current.month = 4
         
         let year = calendarView.current.year
         let month = calendarView.current.month
@@ -38,7 +41,7 @@ class CalendarViewController: UIViewController, CalendarDelegate {
             }
         }
         
-        let ev = EventStore.getEvents(Month(year: 2017, month: 1))
+        let ev = EventStore.getEvents(Month(year: 2016, month: 4))
         
         if ev  != nil {
             for e in ev {

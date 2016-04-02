@@ -78,6 +78,7 @@ public struct EventStore {
         event.notes = notes
         event.allDay = allDay
         addEvent(event)
+
     }
     
     /// カレンダーにイベントを追加します。

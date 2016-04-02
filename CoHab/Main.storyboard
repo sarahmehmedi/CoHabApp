@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5BE4240F-DB7E-4DC9-936E-97297C54E451" translatesAutoresizingMaskIntoConstraints="NO" id="ilR-Uw-pc4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6394B826-1ADE-4009-B68E-179728897B21" translatesAutoresizingMaskIntoConstraints="NO" id="ilR-Uw-pc4">
                                 <rect key="frame" x="114" y="81" width="373" height="413"/>
                             </imageView>
                         </subviews>
@@ -278,6 +278,12 @@
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="dVM-uh-bE7">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="XMP-Dk-f07"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="Qz3-Ng-2uM">
+                            <connections>
+                                <action selector="calendarBackButton:" destination="a5c-VW-WE4" id="jaq-jh-wy2"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="+" id="ESD-7P-Ysp">
                             <connections>
                                 <action selector="tappedAddButton:" destination="a5c-VW-WE4" id="Y2G-w9-m2u"/>
@@ -287,6 +293,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="calendarView" destination="ADT-Jw-IpB" id="Duf-tt-U0P"/>
+                        <segue destination="AlV-qD-9oa" kind="show" identifier="calendarBackButton" id="88q-yu-hzZ"/>
                     </connections>
                 </viewController>
             </objects>
@@ -510,7 +517,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="5BE4240F-DB7E-4DC9-936E-97297C54E451" width="612" height="792">
+        <image name="6394B826-1ADE-4009-B68E-179728897B21" width="612" height="792">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGQkNYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QDwcI
 ERYbHCUmJygwMzY8P1UkbnVsbNQJCgsMDQ4PEFYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVwc1dOU0Nv
@@ -17090,7 +17097,8 @@ uwAPKr4ADyrDAAAAAAAABAEAAAAAAAAARgAAAAAAAAAAAAAAAAAPKsU
         <image name="Title" width="612" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Emz-F1-yD6"/>
+        <segue reference="88q-yu-hzZ"/>
         <segue reference="yKE-S6-h5r"/>
+        <segue reference="Emz-F1-yD6"/>
     </inferredMetricsTieBreakers>
 </document>
