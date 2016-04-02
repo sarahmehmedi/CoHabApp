@@ -17,6 +17,7 @@ class CalendarViewController: UIViewController, CalendarDelegate {
     @IBOutlet weak var header: UINavigationItem!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         calendarView.delegate = self
@@ -70,7 +71,7 @@ class CalendarViewController: UIViewController, CalendarDelegate {
     func changedMonth(year: Int, month: Int) {
         let monthEn = ["January", "Febrary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
         
-        header.title = "\(year) \(monthEn[month - 1])"
+     //   header.title = "\(year) \(monthEn[month - 1])"
         
     }
     
