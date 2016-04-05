@@ -10,6 +10,7 @@
 		16E3B717FD1C9F2FA1E4F410 /* Pods_CoHab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86BEBDD4CA84FB156A338D78 /* Pods_CoHab.framework */; };
 		650A797B1C9DE51100AA0662 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A797A1C9DE51100AA0662 /* CalendarViewController.swift */; };
 		656DF67E1C9C7C6500328AF5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656DF67D1C9C7C6500328AF5 /* HomeViewController.swift */; };
+		83847C091CB1FF9600F1E419 /* BillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83847C081CB1FF9600F1E419 /* BillsViewController.swift */; };
 		D17036CD1C9A1302006E6061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17036CC1C9A1302006E6061 /* AppDelegate.swift */; };
 		D17036CF1C9A1302006E6061 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17036CE1C9A1302006E6061 /* ViewController.swift */; };
 		D17036D41C9A1302006E6061 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D17036D31C9A1302006E6061 /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 		623AAC2431021C078A936E66 /* Pods-CoHab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoHab.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoHab/Pods-CoHab.debug.xcconfig"; sourceTree = "<group>"; };
 		650A797A1C9DE51100AA0662 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		656DF67D1C9C7C6500328AF5 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		83847C081CB1FF9600F1E419 /* BillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillsViewController.swift; sourceTree = "<group>"; };
 		86BEBDD4CA84FB156A338D78 /* Pods_CoHab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoHab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D17036C91C9A1302006E6061 /* CoHab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoHab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D17036CC1C9A1302006E6061 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				D17036CE1C9A1302006E6061 /* ViewController.swift */,
 				D17036D31C9A1302006E6061 /* Assets.xcassets */,
 				D17037001C9B6D2C006E6061 /* Main.storyboard */,
+				83847C081CB1FF9600F1E419 /* BillsViewController.swift */,
 				650A797A1C9DE51100AA0662 /* CalendarViewController.swift */,
 				D17036D51C9A1302006E6061 /* LaunchScreen.storyboard */,
 				D17036D81C9A1302006E6061 /* Info.plist */,
@@ -380,6 +383,7 @@
 				D17036CF1C9A1302006E6061 /* ViewController.swift in Sources */,
 				D17036CD1C9A1302006E6061 /* AppDelegate.swift in Sources */,
 				D17036FB1C9A1F17006E6061 /* RegisterPageViewController.swift in Sources */,
+				83847C091CB1FF9600F1E419 /* BillsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

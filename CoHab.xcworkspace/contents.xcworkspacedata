@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:BillsViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:CoHab.xcodeproj">
    </FileRef>
    <FileRef
