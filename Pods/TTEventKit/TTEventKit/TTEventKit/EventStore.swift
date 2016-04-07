@@ -18,6 +18,10 @@ public struct EventStore {
         store.requestAccessToEntityType(EKEntityType.Event) { (granted, error) in
             completion(granted: granted, error: error)
         }
+        
+        store.requestAccessToEntityType(EKEntityType.Reminder) { (granted, error) in
+            completion(granted: granted, error: error)
+        }
     }
     
 //=================================

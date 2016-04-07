@@ -34,7 +34,7 @@ public class CalendarConfig {
     
     
     // 曜日の表記
-    public var weekNotation = ["日", "月", "火", "水", "木", "金", "土"]
+    public var weekNotation = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     
     // 土曜日の文字色
     public var saturdayColor = UIColor.blueColor()

@@ -32,6 +32,8 @@ import EventKit
     // カレンダーに追加したイベント
     var calEvents = [EKEvent]()
     
+    var calReminders = [EKReminder]()
+    
     public var currentMonthView: CalendarMonthView {
         return monthViews[1]
     }

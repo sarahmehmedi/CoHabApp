@@ -22,6 +22,8 @@ public class CalendarDayView: UIView {
     /// 登録されているイベント
     var events = [EKEvent]()
     
+    var reminders = [EKReminder]()
+    
     /// 選択されているか否か
     var selected = false
     
