@@ -61,7 +61,7 @@ class CalendarViewController: UIViewController, CalendarDelegate {
         
         let event = EventStore.create()
         event.title = "Test Event"
-        event.startDate = Month(year: 2016, month: 3).nsdate
+        event.startDate = NSDate()
         event.endDate = event.startDate
         event.notes = "This is a test event"
         EventUI.showEditView(event)
