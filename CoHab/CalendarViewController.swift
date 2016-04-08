@@ -10,6 +10,7 @@ import UIKit
 import EventKit
 import TTEventKit
 
+
 class CalendarViewController: UIViewController, CalendarDelegate {
     
     @IBOutlet weak var calendarView: CalendarView!
@@ -40,7 +41,7 @@ class CalendarViewController: UIViewController, CalendarDelegate {
                 }
             }
         }
-        
+
         let ev = EventStore.getEvents(Month(year: 2016, month: 4))
         
         if ev  != nil {
