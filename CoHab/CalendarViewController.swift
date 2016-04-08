@@ -21,12 +21,16 @@ class CalendarViewController: UIViewController, CalendarDelegate {
     
     override func viewDidLoad() {
         
+        let flags: NSCalendarUnit = NSCalendarUnit.Year
+        let currDate = NSDate()
+        let components = NSCalendar.currentCalendar().components(flags, fromDate: currDate)
+        
         super.viewDidLoad()
         
         calendarView.delegate = self
         
-        calendarView.current.year = 2016
-        calendarView.current.month = 4
+        calendarView.current.year = components.year
+        calendarView.current.month = components.month
         
         let year = calendarView.current.year
         let month = calendarView.current.month
@@ -41,7 +45,7 @@ class CalendarViewController: UIViewController, CalendarDelegate {
             }
         }
         
-        let ev = EventStore.getEvents(Month(year: 2016, month: 4))
+        let ev = EventStore.getEvents(Month(year: year, month: month))
         
         if ev  != nil {
             for e in ev {
