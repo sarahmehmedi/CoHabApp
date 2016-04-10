@@ -7,6 +7,8 @@ target 'CoHab' do
 pod 'BTNavigationDropdownMenu'
 pod 'TTEventKit'
 pod 'Firebase'
+pod 'MGSwipeTableCell'
+pod 'SwiftForms'
 end
 
 target 'CoHabTests' do

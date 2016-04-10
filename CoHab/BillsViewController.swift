@@ -8,13 +8,48 @@
 
 import UIKit
 import MGSwipeTableCell
+import SwiftForms
 
 
-class BillsViewController:UIViewController{
+class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDelegate{
     
+    @IBAction func addBill(sender: AnyObject) {
+        performSegueWithIdentifier("addBill", sender: self)
+    }
     @IBOutlet weak var table: UITableView!
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    var bills = ["Rent","Water"]
+    var total = ["400","50"]
+    var dueDate = ["10/05/2016","10/06/2016"]
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: - Table view data source
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+        func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! CustomCell
+        cell.billName.text = bills[indexPath.row]
+        cell.billTotal.text = total[indexPath.row]
+        cell.billDueDate.text = dueDate[indexPath.row]
+        return cell
+    }
+    
+
+    
+   
+    /*func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let reuseIdentifier = "programmaticCell"
         var cell = self.table.dequeueReusableCellWithIdentifier(reuseIdentifier) as! MGSwipeTableCell!
@@ -25,7 +60,7 @@ class BillsViewController:UIViewController{
         
         cell.textLabel!.text = "Title"
         cell.detailTextLabel!.text = "Detail text"
-       // cell.delegate = self //optional
+        // cell.delegate = self //optional
         
         //configure left buttons
         cell.leftButtons = [MGSwipeButton(title: "", icon: UIImage(named:"check.png"), backgroundColor: UIColor.greenColor())
@@ -38,6 +73,6 @@ class BillsViewController:UIViewController{
         cell.rightSwipeSettings.transition = MGSwipeTransition.Rotate3D
         
         return cell
-    }
-
+    }*/
 }
+

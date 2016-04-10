@@ -86,10 +86,14 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-CoHab/BTNavigationDropdownMenu.framework"
   install_framework "Pods-CoHab/Firebase.framework"
+  install_framework "Pods-CoHab/MGSwipeTableCell.framework"
+  install_framework "Pods-CoHab/SwiftForms.framework"
   install_framework "Pods-CoHab/TTEventKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-CoHab/BTNavigationDropdownMenu.framework"
   install_framework "Pods-CoHab/Firebase.framework"
+  install_framework "Pods-CoHab/MGSwipeTableCell.framework"
+  install_framework "Pods-CoHab/SwiftForms.framework"
   install_framework "Pods-CoHab/TTEventKit.framework"
 fi

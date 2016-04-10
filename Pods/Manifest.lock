@@ -1,16 +1,22 @@
 PODS:
   - BTNavigationDropdownMenu (0.2.1)
   - Firebase (2.5.1)
+  - MGSwipeTableCell (1.5.5)
+  - SwiftForms (1.0.5)
   - TTEventKit (0.0.2)
 
 DEPENDENCIES:
   - BTNavigationDropdownMenu
   - Firebase
+  - MGSwipeTableCell
+  - SwiftForms
   - TTEventKit
 
 SPEC CHECKSUMS:
   BTNavigationDropdownMenu: 9cf4060162c96510ee27c388412e28678320cdc0
   Firebase: 3565ea88b830f28f2c77ecc524622bc71a20d085
+  MGSwipeTableCell: bafeb5f351124544c9364ecbdf24c7b06a37d340
+  SwiftForms: c32a86b2cb51c2d7c0f7fec0f9fdb72ff86951c6
   TTEventKit: ca98039027f14f67da33f9d2405c0b9879dcab32
 
 COCOAPODS: 0.39.0
