@@ -13,6 +13,18 @@ import SwiftForms
 
 class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDelegate{
     
+    var billNameString:String!
+    var billTotalString:String!
+    var billDateString:String!
+   override func viewDidLoad() {
+    super.viewDidLoad()
+    if (billNameString != nil || billTotalString != nil || billDateString != nil){
+        bills.append(billNameString)
+        total.append(billTotalString)
+        dueDate.append(billDateString)
+    }
+    }
+    
     @IBAction func addBill(sender: AnyObject) {
         performSegueWithIdentifier("addBill", sender: self)
     }
@@ -21,9 +33,6 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
     var bills = ["Rent","Water"]
     var total = ["400","50"]
     var dueDate = ["10/05/2016","10/06/2016"]
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -35,7 +44,7 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
         return 1
     }
         func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return bills.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
