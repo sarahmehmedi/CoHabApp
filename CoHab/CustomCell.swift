@@ -15,5 +15,9 @@ class CustomCell: UITableViewCell {
     @IBOutlet weak var billDueDate: UILabel!
     
     
+    @IBOutlet weak var taskName: UILabel!
+    @IBOutlet weak var taskDate: UILabel!
+    @IBOutlet weak var taskDescription: UILabel!
+    
     
 }

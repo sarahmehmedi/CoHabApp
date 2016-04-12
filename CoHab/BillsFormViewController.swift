@@ -15,6 +15,7 @@ class BillsFormViewController: UIViewController {
     @IBOutlet weak var billName: UITextField!
     @IBOutlet weak var billTotal: UITextField!
     @IBOutlet weak var billDueDate: UIDatePicker!
+    
     // This sends us back to the bill view
     @IBAction func submitBill(sender: AnyObject) {
         performSegueWithIdentifier("submitBill", sender: self)

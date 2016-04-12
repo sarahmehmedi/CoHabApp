@@ -20,6 +20,8 @@
 		D17036FB1C9A1F17006E6061 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17036FA1C9A1F17006E6061 /* RegisterPageViewController.swift */; };
 		D17036FD1C9A7A08006E6061 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17036FC1C9A7A08006E6061 /* LoginViewController.swift */; };
 		D17037011C9B6D2C006E6061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D17037001C9B6D2C006E6061 /* Main.storyboard */; };
+		D18B0E481CBC90820013DF2E /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B0E471CBC90820013DF2E /* TaskViewController.swift */; };
+		D18B0E4A1CBC90A30013DF2E /* TaskFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18B0E491CBC90A30013DF2E /* TaskFormViewController.swift */; };
 		D18B8C251CAF30D7003B3909 /* TTEventKit in CopyFiles */ = {isa = PBXBuildFile; fileRef = D18B8C241CAF30D7003B3909 /* TTEventKit */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D1B06BC51CBA2F9900F9E13F /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B06BC41CBA2F9900F9E13F /* CustomCell.swift */; };
 		D1B06BC91CBA3EF200F9E13F /* BillsFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B06BC81CBA3EF200F9E13F /* BillsFormViewController.swift */; };
@@ -86,6 +88,8 @@
 		D17036FA1C9A1F17006E6061 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 		D17036FC1C9A7A08006E6061 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D17037001C9B6D2C006E6061 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D18B0E471CBC90820013DF2E /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		D18B0E491CBC90A30013DF2E /* TaskFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskFormViewController.swift; sourceTree = "<group>"; };
 		D18B8C241CAF30D7003B3909 /* TTEventKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TTEventKit; path = Pods/TTEventKit; sourceTree = "<group>"; };
 		D1B06BC41CBA2F9900F9E13F /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		D1B06BC81CBA3EF200F9E13F /* BillsFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillsFormViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +170,8 @@
 				D17036FC1C9A7A08006E6061 /* LoginViewController.swift */,
 				D1B06BC41CBA2F9900F9E13F /* CustomCell.swift */,
 				D1B06BC81CBA3EF200F9E13F /* BillsFormViewController.swift */,
+				D18B0E471CBC90820013DF2E /* TaskViewController.swift */,
+				D18B0E491CBC90A30013DF2E /* TaskFormViewController.swift */,
 			);
 			path = CoHab;
 			sourceTree = "<group>";
@@ -384,12 +390,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				650A797B1C9DE51100AA0662 /* CalendarViewController.swift in Sources */,
+				D18B0E4A1CBC90A30013DF2E /* TaskFormViewController.swift in Sources */,
 				656DF67E1C9C7C6500328AF5 /* HomeViewController.swift in Sources */,
 				D1B06BC91CBA3EF200F9E13F /* BillsFormViewController.swift in Sources */,
 				D17036FD1C9A7A08006E6061 /* LoginViewController.swift in Sources */,
 				D17036CF1C9A1302006E6061 /* ViewController.swift in Sources */,
 				D17036CD1C9A1302006E6061 /* AppDelegate.swift in Sources */,
 				D17036FB1C9A1F17006E6061 /* RegisterPageViewController.swift in Sources */,
+				D18B0E481CBC90820013DF2E /* TaskViewController.swift in Sources */,
 				D1B06BC51CBA2F9900F9E13F /* CustomCell.swift in Sources */,
 				83847C091CB1FF9600F1E419 /* BillsViewController.swift in Sources */,
 			);

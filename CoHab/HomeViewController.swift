@@ -35,6 +35,9 @@ class HomeViewController: UIViewController {
         menuView.maskBackgroundOpacity = 0.3
         menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
             print("Did select item at index: \(indexPath)")
+            if (indexPath == 1){
+                self.performSegueWithIdentifier("taskView", sender: self)
+            }
             if (indexPath == 2){
                 self.performSegueWithIdentifier("calendarView", sender: self)
             }
