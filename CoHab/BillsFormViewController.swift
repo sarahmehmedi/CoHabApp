@@ -15,24 +15,15 @@ class BillsFormViewController: UIViewController {
     @IBOutlet weak var billName: UITextField!
     @IBOutlet weak var billTotal: UITextField!
     @IBOutlet weak var billDueDate: UIDatePicker!
+    let flag = true
+    @IBAction func Cancel(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
     
     // This sends us back to the bill view
     @IBAction func submitBill(sender: AnyObject) {
-        performSegueWithIdentifier("submitBill", sender: self)
+    performSegueWithIdentifier("backToBills", sender: self)
     }
-    // This is what is processed after you submit the bill
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if (segue.identifier == "submitBill") {
-            let svc = segue.destinationViewController as! BillsViewController;
-            // This formats the date into a string
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "dd-MM-yyyy"
-            let billDueDateString = dateFormatter.stringFromDate(billDueDate.date)
-            // These are the variables we will transfer back to our table after the user submits them
-            svc.billNameString = billName.text
-            svc.billTotalString = billTotal.text
-            svc.billDateString = billDueDateString
-        }
-    }
+
 }
     

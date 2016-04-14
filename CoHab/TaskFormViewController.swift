@@ -18,6 +18,10 @@ class TaskFormViewController: UIViewController {
           performSegueWithIdentifier("submitTask", sender: self)
     }
     
+    @IBAction func Cancel(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     // This is what is processed after you submit the bill
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "submitTask") {
