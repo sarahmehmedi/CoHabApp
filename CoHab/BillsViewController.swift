@@ -80,13 +80,14 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
    //Create table edited so theres a slide left/right function - will have to connect the slide functions to something later
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
+        
         let reuseIdentifier = "programmaticCell"
         var cell = self.table.dequeueReusableCellWithIdentifier(reuseIdentifier) as! MGSwipeTableCell!
         if cell == nil
         {
             cell = MGSwipeTableCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: reuseIdentifier)
         }
-        
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.textLabel!.text = bills[indexPath.row]
         cell.detailTextLabel!.text = total[indexPath.row] + " dollars owed by " + dueDate[indexPath.row]
       
