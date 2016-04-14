@@ -11,6 +11,7 @@
 		650A797B1C9DE51100AA0662 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A797A1C9DE51100AA0662 /* CalendarViewController.swift */; };
 		656DF67E1C9C7C6500328AF5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656DF67D1C9C7C6500328AF5 /* HomeViewController.swift */; };
 		83847C091CB1FF9600F1E419 /* BillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83847C081CB1FF9600F1E419 /* BillsViewController.swift */; };
+		8BA604B61CC0545C00F30A1A /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA604B51CC0545C00F30A1A /* HelpViewController.swift */; };
 		D17036CD1C9A1302006E6061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17036CC1C9A1302006E6061 /* AppDelegate.swift */; };
 		D17036CF1C9A1302006E6061 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17036CE1C9A1302006E6061 /* ViewController.swift */; };
 		D17036D41C9A1302006E6061 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D17036D31C9A1302006E6061 /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		656DF67D1C9C7C6500328AF5 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		83847C081CB1FF9600F1E419 /* BillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillsViewController.swift; sourceTree = "<group>"; };
 		86BEBDD4CA84FB156A338D78 /* Pods_CoHab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoHab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BA604B51CC0545C00F30A1A /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		D17036C91C9A1302006E6061 /* CoHab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoHab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D17036CC1C9A1302006E6061 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D17036CE1C9A1302006E6061 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				D1B06BC81CBA3EF200F9E13F /* BillsFormViewController.swift */,
 				D18B0E471CBC90820013DF2E /* TaskViewController.swift */,
 				D18B0E491CBC90A30013DF2E /* TaskFormViewController.swift */,
+				8BA604B51CC0545C00F30A1A /* HelpViewController.swift */,
 			);
 			path = CoHab;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				D17036FD1C9A7A08006E6061 /* LoginViewController.swift in Sources */,
 				D17036CF1C9A1302006E6061 /* ViewController.swift in Sources */,
 				D17036CD1C9A1302006E6061 /* AppDelegate.swift in Sources */,
+				8BA604B61CC0545C00F30A1A /* HelpViewController.swift in Sources */,
 				D17036FB1C9A1F17006E6061 /* RegisterPageViewController.swift in Sources */,
 				D18B0E481CBC90820013DF2E /* TaskViewController.swift in Sources */,
 				D1B06BC51CBA2F9900F9E13F /* CustomCell.swift in Sources */,

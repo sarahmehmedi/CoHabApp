@@ -12,6 +12,9 @@ import BTNavigationDropdownMenu
 class HomeViewController: UIViewController {
     
     
+    @IBAction func helpButton(sender: AnyObject) {
+        performSegueWithIdentifier("helpButton", sender: self)
+    }
     var menuView: BTNavigationDropdownMenu!
     
     override func viewDidLoad() {
