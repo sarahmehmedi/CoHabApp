@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let items = ["Home", "Tasks", "Myschedule", "Bills", "Group", "Building"]
+        let items = ["Home", "Tasks", "Calendar", "Bills", "Group", "Building"]
        
         self.navigationController?.navigationBar.translucent = false
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.0/255.0, green:180/255.0, blue:220/255.0, alpha: 1.0)
