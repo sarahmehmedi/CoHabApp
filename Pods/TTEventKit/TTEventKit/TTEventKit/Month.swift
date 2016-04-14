@@ -18,8 +18,9 @@ public class Month {
     }
     
     public init(year: Int, month: Int) {
-        self.year = year
-        self.month = month
+        let comps = nscalendar.components([.Year, .Month, .Day], fromDate: NSDate())
+        self.year = comps.year
+        self.month = comps.month
     
         nsdate = NSDate()
     }
@@ -63,8 +64,9 @@ public class Month {
     
     // 前の月の日付を取得
     public func prev() -> Month {
-        var prevYear = year
-        var prevMonth = month - 1
+        let comps = nscalendar.components([.Year, .Month, .Day], fromDate: NSDate())
+        var prevYear = comps.year
+        var prevMonth = comps.month - 1
         if prevMonth < 1 {
             prevMonth = 12
             prevYear--
