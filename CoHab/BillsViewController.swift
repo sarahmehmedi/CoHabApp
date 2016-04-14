@@ -41,6 +41,7 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
     var total = ["400","50"]
     var dueDate = ["10/05/2016","10/06/2016"]
     
+  
     
     // This does nothing
     override func didReceiveMemoryWarning() {
@@ -80,19 +81,32 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         cell.textLabel!.text = bills[indexPath.row]
-        cell.detailTextLabel!.text = total[indexPath.row]
-        cell.detailTextLabel!.text = dueDate[indexPath.row]
+        cell.detailTextLabel!.text = total[indexPath.row] + " dollars owed by " + dueDate[indexPath.row]
+      
         // cell.delegate = self //optional
         
-        //configures left buttons
-        cell.leftButtons = [MGSwipeButton(title: "Paid", icon: UIImage(named:"check.png"), backgroundColor: UIColor.greenColor())
+        //configures left buttons :
+        //I added the callback or in otherwords functionality for if you click a button on paid. right now the paid function deletes the cell.
+        cell.leftButtons = [MGSwipeButton(title: "Paid", icon: UIImage(named:"check.png"), backgroundColor: UIColor.greenColor(),callback: {
+            (sender: MGSwipeTableCell!) -> Bool in
+            print("Convenience callback for swipe buttons!")
+            self.bills.removeAtIndex(indexPath.row)
+            self.total.removeAtIndex(indexPath.row)
+            self.dueDate.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            return true
+        })
             ,MGSwipeButton(title: "Will Pay", icon: UIImage(named:"fav.png"), backgroundColor: UIColor.orangeColor())]
         cell.leftSwipeSettings.transition = MGSwipeTransition.Rotate3D
+
         
-        //configures right buttons
+        
+        //configures right buttons:
+        
         cell.rightButtons = [MGSwipeButton(title: "Delete", backgroundColor: UIColor.redColor())
             ,MGSwipeButton(title: "More",backgroundColor: UIColor.lightGrayColor())]
         cell.rightSwipeSettings.transition = MGSwipeTransition.Rotate3D
+        
         
         return cell
     }
