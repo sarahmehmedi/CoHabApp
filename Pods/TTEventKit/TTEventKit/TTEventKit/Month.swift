@@ -21,7 +21,7 @@ public class Month {
         self.year = year
         self.month = month
     
-        nsdate = toNSdate()
+        nsdate = NSDate()
     }
     
     // その月の長さを取得
@@ -51,8 +51,9 @@ public class Month {
     
     // 次の月の日付を取得
     public func next() -> Month {
-        var nextYear = year
-        var nextMonth = month + 1
+        let comps = nscalendar.components([.Year, .Month, .Day], fromDate: NSDate())
+        var nextYear = comps.year
+        var nextMonth = comps.month + 1
         if nextMonth > 12 {
             nextMonth = 1
             nextYear++
