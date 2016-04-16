@@ -18,10 +18,6 @@ public struct EventStore {
         store.requestAccessToEntityType(EKEntityType.Event) { (granted, error) in
             completion(granted: granted, error: error)
         }
-        
-        store.requestAccessToEntityType(EKEntityType.Reminder) { (granted, error) in
-            completion(granted: granted, error: error)
-        }
     }
     
 //=================================
@@ -82,7 +78,6 @@ public struct EventStore {
         event.notes = notes
         event.allDay = allDay
         addEvent(event)
-
     }
     
     /// カレンダーにイベントを追加します。
