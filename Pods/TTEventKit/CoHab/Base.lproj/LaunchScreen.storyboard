@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CoHabLogo" translatesAutoresizingMaskIntoConstraints="NO" id="voX-pE-DuV">
+                                <rect key="frame" x="114" y="93" width="373" height="413"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright © 2016 CoHab Group. All rights reserved." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtC-VX-Ijh">
+                                <rect key="frame" x="123" y="571" width="354" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="354" id="vdJ-c5-Ftc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.70562015433081138" green="1" blue="0.90294318889198633" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="BtC-VX-Ijh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5XS-ca-dlT"/>
+                            <constraint firstItem="BtC-VX-Ijh" firstAttribute="top" secondItem="voX-pE-DuV" secondAttribute="bottom" constant="65" id="6TT-br-bgw"/>
+                            <constraint firstItem="voX-pE-DuV" firstAttribute="centerX" secondItem="BtC-VX-Ijh" secondAttribute="centerX" id="eQ4-VA-we5"/>
+                            <constraint firstItem="voX-pE-DuV" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="73" id="h9i-7b-ChG"/>
+                            <constraint firstItem="voX-pE-DuV" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="94" id="mez-Ch-yE7"/>
+                            <constraint firstItem="voX-pE-DuV" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="rzm-9O-upl"/>
+                            <constraint firstItem="BtC-VX-Ijh" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="xuI-oi-b4c"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-235" y="217"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="CoHabLogo" width="612" height="792"/>
+    </resources>
+</document>
