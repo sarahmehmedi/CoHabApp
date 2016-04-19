@@ -20,8 +20,9 @@ public class Month {
     public init(year: Int, month: Int) {
         self.year = year
         self.month = month
+        
     
-        nsdate = toNSdate()
+        nsdate = NSDate()
     }
     
     // その月の長さを取得
@@ -52,7 +53,7 @@ public class Month {
     // 次の月の日付を取得
     public func next() -> Month {
         var nextYear = year
-        var nextMonth = month + 1
+        var nextMonth = month+1
         if nextMonth > 12 {
             nextMonth = 1
             nextYear++
@@ -63,7 +64,7 @@ public class Month {
     // 前の月の日付を取得
     public func prev() -> Month {
         var prevYear = year
-        var prevMonth = month - 1
+        var prevMonth = (month - 1)
         if prevMonth < 1 {
             prevMonth = 12
             prevYear--

@@ -38,10 +38,10 @@ import EventKit
     
     // デリゲート
     @IBInspectable public var delegate: CalendarDelegate?
-
-//=================================
-// UI
-//=================================
+    
+    //=================================
+    // UI
+    //=================================
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -56,16 +56,16 @@ import EventKit
     // カレンダーの部品を生成します。
     func readyCalendar() {
         
-//        backgroundColor = UIColor(red: 0.6, green: 0.7, blue: 1.0, alpha: 1.0)
+        //        backgroundColor = UIColor(red: 0.6, green: 0.7, blue: 1.0, alpha: 1.0)
         
         // 曜日の表示
         for str in config.weekNotation {
             let label = makeLabel(str)
-//            label.backgroundColor = UIColor.whiteColor()
-//            label.layer.masksToBounds = false
-//            label.layer.shadowOffset = CGSizeMake(5.0, 5.0)
-//            label.layer.shadowOpacity = 0.7
-//            label.layer.shadowColor = UIColor.blackColor().CGColor
+            //            label.backgroundColor = UIColor.whiteColor()
+            //            label.layer.masksToBounds = false
+            //            label.layer.shadowOffset = CGSizeMake(5.0, 5.0)
+            //            label.layer.shadowOpacity = 0.7
+            //            label.layer.shadowColor = UIColor.blackColor().CGColor
             addSubview(label)
             weekdayLabels.append(label)
         }
@@ -147,7 +147,7 @@ import EventKit
     func makeScrollView() -> UIScrollView {
         let scrollView = UIScrollView(frame: self.bounds)
         scrollView.delegate = self
-//        scrollView.pagingEnabled = true
+        //        scrollView.pagingEnabled = true
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
         scrollView.scrollsToTop = false
@@ -163,9 +163,9 @@ import EventKit
         }
     }
     
-//=================================
-// UIScrollViewDelegate
-//=================================
+    //=================================
+    // UIScrollViewDelegate
+    //=================================
     public func scrollViewDidScroll(scrollView: UIScrollView) {
         let y = scrollView.contentOffset.y
         let dayH = monthViews[0].dayHeight
@@ -210,19 +210,19 @@ import EventKit
         delegate?.changedMonth(current.year, month: current.month)
         scrollView.delegate = self
     }
-
-//=================================
-// Calendar Event
-//=================================
+    
+    //=================================
+    // Calendar Event
+    //=================================
     func daySelected(dayView: CalendarDayView) {
         selectedDayView?.unselect()
         selectedDayView = dayView
     }
     
     
-//=================================
-// Calendar Operation
-//=================================
+    //=================================
+    // Calendar Operation
+    //=================================
     
     // カレンダーにイベントを追加します
     func addEvent(event: EKEvent) {
