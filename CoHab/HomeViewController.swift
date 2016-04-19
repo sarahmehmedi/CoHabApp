@@ -11,10 +11,8 @@ import BTNavigationDropdownMenu
 
 class HomeViewController: UIViewController {
     
-    
-    @IBAction func helpButton(sender: AnyObject) {
-        performSegueWithIdentifier("helpButton", sender: self)
-    }
+    var backendless = Backendless.sharedInstance()
+  
     var menuView: BTNavigationDropdownMenu!
     
     override func viewDidLoad() {
@@ -57,29 +55,17 @@ class HomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    // This is just a funciton that displays an alert message for when you mess something up
-    func displayMyAlertMessage(userMessage:String)
-    {
-        let myAlert = UIAlertController(title:"Alert", message:userMessage, preferredStyle:UIAlertControllerStyle.Alert);
-        
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:nil);
-        
-        myAlert.addAction(okAction);
-        
-        self.presentViewController(myAlert, animated: true, completion: nil);
-    }
-    
 
+    //MARK: IBActions:
     
-    
+    @IBAction func helpButton(sender: AnyObject) {
+        performSegueWithIdentifier("helpButton", sender: self)
+    }
     // This is what happens when you logout, it just changed the key to false and switches you to the login screen
     @IBAction func logoutButtonTapped(sender: AnyObject) {
-        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "isUserLoggedIn");
-        NSUserDefaults.standardUserDefaults().synchronize();
-        self.performSegueWithIdentifier("loginview", sender: self)
+        showLogoutView()
     }
+    
     
     @IBAction func onMyScheduleClick(sender: AnyObject) {
         
@@ -107,6 +93,44 @@ class HomeViewController: UIViewController {
     
     @IBAction func onSettingsClick(sender: AnyObject) {
         
+    }
+    
+    //MARK: Helper functions
+    // This is just a funciton that displays an alert message for when you mess something up
+    func displayMyAlertMessage(userMessage:String)
+    {
+        let myAlert = UIAlertController(title:"Alert", message:userMessage, preferredStyle:UIAlertControllerStyle.Alert);
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:nil);
+        
+        myAlert.addAction(okAction);
+        
+        self.presentViewController(myAlert, animated: true, completion: nil);
+    }
+    
+    func showLogoutView()
+    {
+        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle : .ActionSheet)
+        
+        let logoutAction = UIAlertAction(title: "Log Out", style: .Destructive) { (alert : UIAlertAction!) -> Void in
+            self.logOut()
+        }
+        
+        let cancelAction = UIAlertAction(title : "Cancel", style: .Cancel) { (alert: UIAlertAction!) -> Void in
+            print("cancelled")
+        }
+        optionMenu.addAction(logoutAction)
+        optionMenu.addAction(cancelAction)
+        
+        self.presentViewController(optionMenu, animated: true, completion: nil)
+    }
+    
+    func logOut()
+    {
+        backendless.userService.logout()
+        
+        let beginning = storyboard!.instantiateViewControllerWithIdentifier("Beginning")
+        self.presentViewController(beginning, animated : true, completion : nil)
     }
     
 }

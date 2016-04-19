@@ -85,13 +85,25 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-CoHab/BTNavigationDropdownMenu.framework"
+  install_framework "Pods-CoHab/DACircularProgress.framework"
   install_framework "Pods-CoHab/Firebase.framework"
+  install_framework "Pods-CoHab/IDMPhotoBrowser.framework"
+  install_framework "Pods-CoHab/JSQMessagesViewController.framework"
+  install_framework "Pods-CoHab/JSQSystemSoundPlayer.framework"
   install_framework "Pods-CoHab/MGSwipeTableCell.framework"
+  install_framework "Pods-CoHab/SDWebImage.framework"
   install_framework "Pods-CoHab/TTEventKit.framework"
+  install_framework "Pods-CoHab/pop.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-CoHab/BTNavigationDropdownMenu.framework"
+  install_framework "Pods-CoHab/DACircularProgress.framework"
   install_framework "Pods-CoHab/Firebase.framework"
+  install_framework "Pods-CoHab/IDMPhotoBrowser.framework"
+  install_framework "Pods-CoHab/JSQMessagesViewController.framework"
+  install_framework "Pods-CoHab/JSQSystemSoundPlayer.framework"
   install_framework "Pods-CoHab/MGSwipeTableCell.framework"
+  install_framework "Pods-CoHab/SDWebImage.framework"
   install_framework "Pods-CoHab/TTEventKit.framework"
+  install_framework "Pods-CoHab/pop.framework"
 fi

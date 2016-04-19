@@ -10,9 +10,14 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var userEmailTextField: UITextField!
-    @IBOutlet weak var userPasswordTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
+    let backendless = Backendless.sharedInstance()
+    
+    var email : String?
+    var password: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -27,85 +32,44 @@ class LoginViewController: UIViewController {
     }
     
     
-    // This is just a funciton that displays an alert message for when you mess something up
-    func displayMyAlertMessage(userMessage:String)
+    //MARK: IBActions:
+    
+    @IBAction func loginBarButtonItemPressed(sender: UIBarButtonItem) {
+        //check if user has input data in login fields
+        if(emailTextField.text != "" && passwordTextField.text != "" )
+        {
+            ProgressHUD.show("Logging in...") //Use ProgressHUD to show login status
+            self.email = emailTextField.text
+            self.password = passwordTextField.text
+            //call function to login
+            loginUser(email!, password: password!)
+        }
+        else
+        {
+            //use ProgressHUD to show login warning to user if text fields vacant or incorrectly filled
+            ProgressHUD.showError("All fields are required")
+        }
+
+    }
+    
+    //login function (should probably extract this out later to some higher level since it's used in both registration and log in)
+    func loginUser(email: String, password: String)
     {
-        let myAlert = UIAlertController(title:"Alert", message:userMessage, preferredStyle:UIAlertControllerStyle.Alert);
-        
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:nil);
-        
-        myAlert.addAction(okAction);
-        
-        self.presentViewController(myAlert, animated: true, completion: nil);
+        //call backndless user login service to log user in
+        backendless.userService.login(email, password: password, response: { (user : BackendlessUser!) -> Void in
+            ProgressHUD.dismiss()
+            //reset text fields on login
+            self.emailTextField.text = ""
+            self.passwordTextField.text = ""
+            
+            let vc = UIStoryboard(name : "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeVC") as! UINavigationController
+            self.presentViewController(vc, animated: true, completion: nil)
+
+        }) { (fault : Fault!) -> Void in //report error
+            print("couldn't log in user \(fault)")
+        }
     }
+
     
     
-    // This is the function that is triggered when you tap on the login button
-    // Basically it will tell you whether your sign in was valid or invalid and then will
-    // Change the status of the app to logged in
-    @IBAction func loginButtonTapped(sender: AnyObject) {
-        
-        let userEmail = userEmailTextField.text
-        let userPassword = userPasswordTextField.text
-        
-        
-        if(userEmail?.isEmpty == true || userPassword?.isEmpty == true){
-            let myAlert = UIAlertController(title: "Alert", message: "You left email or password blank! Please try again.", preferredStyle: UIAlertControllerStyle.Alert);
-            let okAction = UIAlertAction(title: "Ok", style:UIAlertActionStyle.Default, handler:nil);
-            myAlert.addAction(okAction);
-            self.presentViewController(myAlert,animated:true, completion:nil);
-        }
-        
-        //send user data to server side
-        let myUrl = NSURL(string: "http://mysql.cs.luc.edu/~smehmedi/CohabApp/userLogin.php");
-        let request = NSMutableURLRequest(URL:myUrl!);
-        request.HTTPMethod = "POST";
-        
-        let postString = "email=\(userEmail!)&password=\(userPassword!)";
-        
-        print(postString);
-        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding);
-        
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
-            data, response, error -> Void in
-            
-            if error != nil{
-                print("error=\(error)")
-                return
-            }
-            
-            do{
-                if let parseJSON = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as? NSDictionary{
-                    
-                    let resultValue = parseJSON["status"] as! String;
-                    print("result: \(resultValue)")
-                    
-                    if (resultValue == "Success"){
-                        //successful login
-                        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isUserLoggedIn");
-                        NSUserDefaults.standardUserDefaults().synchronize();
-                        // self.dismissViewControllerAnimated(true, completion: nil);
-                    }
-                    else if (resultValue == "error"){
-                        //                        let loginViewController = rootViewController as Cohab.LoginViewController;
-                        //                        let activeViewCont = loginViewController.visibleViewController;
-                        
-                        //idk why this alert popup doesnt work so i commented it out for now - sarah
-                        
-                        /*
-                         let errorAlert = UIAlertController(title: "Alert", message: "You left email or password blank! Please try again.", preferredStyle: UIAlertControllerStyle.Alert);
-                         let returnAction = UIAlertAction(title: "Ok", style:UIAlertActionStyle.Default, handler:nil);
-                         errorAlert.addAction(returnAction);
-                         self.presentViewController(errorAlert,animated:true, completion:nil);
-                         */
-                        self.dismissViewControllerAnimated(false, completion: nil);
-                        
-                    }
-                }
-            } catch let error as NSError{
-                print(error)
-            }
-        }
-        task.resume();
-    }
 }

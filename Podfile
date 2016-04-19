@@ -8,6 +8,8 @@ pod 'BTNavigationDropdownMenu'
 pod 'TTEventKit'
 pod 'Firebase'
 pod 'MGSwipeTableCell'
+pod ‘JSQMessagesViewController’
+pod ‘IDMPhotoBrowser’
 end
 
 target 'CoHabTests' do
