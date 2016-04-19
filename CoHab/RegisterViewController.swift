@@ -114,7 +114,7 @@ class RegisterViewController: UIViewController {
         backendless.userService.login(email, password: password, response: {(user : BackendlessUser!) -> Void in
             
             //here we segue to homeview vc
-            let vc = UIStoryboard(name : "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeVC")
+            let vc = UIStoryboard(name : "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeVC") as! UINavigationController
             self.presentViewController(vc, animated: true, completion: nil)
         }) { (fault :Fault!) -> Void in //error handler to print backendless specific error on fail
             print("Server reported an error: \(fault)")

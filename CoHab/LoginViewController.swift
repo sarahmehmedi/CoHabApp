@@ -62,9 +62,9 @@ class LoginViewController: UIViewController {
             self.emailTextField.text = ""
             self.passwordTextField.text = ""
             
-            //segue to home view
-            let vc = UIStoryboard(name : "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeVC")
+            let vc = UIStoryboard(name : "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeVC") as! UINavigationController
             self.presentViewController(vc, animated: true, completion: nil)
+
         }) { (fault : Fault!) -> Void in //report error
             print("couldn't log in user \(fault)")
         }

@@ -329,7 +329,7 @@
         <!--HomeViewController-->
         <scene sceneID="B2T-ch-nk8">
             <objects>
-                <viewController storyboardIdentifier="HomeVC" title="HomeViewController" id="AlV-qD-9oa" customClass="HomeViewController" customModule="CoHab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="HomeViewController" id="AlV-qD-9oa" customClass="HomeViewController" customModule="CoHab" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qR7-0w-jUJ"/>
                         <viewControllerLayoutGuide type="bottom" id="3xS-xu-gBs"/>
@@ -358,14 +358,6 @@
                                     <action selector="logoutButtonTapped:" destination="AlV-qD-9oa" eventType="touchUpInside" id="5EY-7A-pSO"/>
                                 </connections>
                             </button>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="LogoOnly" translatesAutoresizingMaskIntoConstraints="NO" id="xF0-ES-qnM">
-                                <rect key="frame" x="132" y="140" width="336" height="280"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="280" id="Jlv-hq-0H5"/>
-                                    <constraint firstAttribute="width" secondItem="xF0-ES-qnM" secondAttribute="height" multiplier="6:5" id="YP6-ET-ONd"/>
-                                    <constraint firstAttribute="width" constant="336" id="bj2-WD-p0a"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Btm-VF-UBM">
                                 <rect key="frame" x="256" y="424" width="88" height="66"/>
                                 <color key="backgroundColor" red="0.004284555861412063" green="0.80945271596858637" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
@@ -393,6 +385,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" image="LogoOnly" translatesAutoresizingMaskIntoConstraints="NO" id="xF0-ES-qnM">
+                                <rect key="frame" x="132" y="136" width="336" height="280"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="Jlv-hq-0H5"/>
+                                    <constraint firstAttribute="width" secondItem="xF0-ES-qnM" secondAttribute="height" multiplier="6:5" id="YP6-ET-ONd"/>
+                                    <constraint firstAttribute="width" constant="336" id="bj2-WD-p0a"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.76090776159999995" blue="0.46230844290000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -411,7 +411,6 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="BpW-2z-dHt"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="pQ3-fq-Py1"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -424,7 +423,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwy-Uo-sc9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2964" y="305"/>
+            <point key="canvasLocation" x="3852" y="373"/>
         </scene>
         <!--Help View Controller-->
         <scene sceneID="n0S-If-w5Q">
@@ -442,7 +441,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fi6-fo-cFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2964" y="1302"/>
+            <point key="canvasLocation" x="3472" y="1682"/>
         </scene>
         <!--Bills View Controller-->
         <scene sceneID="UAD-k5-Atn">
@@ -553,7 +552,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8l-vi-RzY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3663" y="-587"/>
+            <point key="canvasLocation" x="4535" y="-495"/>
         </scene>
         <!--Bills Form View Controller-->
         <scene sceneID="ctd-hb-7QB">
@@ -698,7 +697,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sye-4b-YMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6407" y="292"/>
+            <point key="canvasLocation" x="7223" y="344"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Uk-Wq-YuJ">
@@ -716,7 +715,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g6y-Yj-X8C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5399" y="300"/>
+            <point key="canvasLocation" x="6231" y="344"/>
         </scene>
         <!--Task View Controller-->
         <scene sceneID="Xeu-p7-DWs">
@@ -828,7 +827,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQm-I6-dbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3729" y="1302"/>
+            <point key="canvasLocation" x="4185" y="1682"/>
         </scene>
         <!--Task Form View Controller-->
         <scene sceneID="0cc-4E-dcY">
@@ -948,7 +947,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QYx-HG-pkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4631" y="757"/>
+            <point key="canvasLocation" x="5123" y="1041"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="STW-WU-Nqp">
@@ -967,6 +966,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zd2-03-gYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="893" y="305"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="JAm-xS-A8b">
+            <objects>
+                <navigationController storyboardIdentifier="HomeVC" automaticallyAdjustsScrollViewInsets="NO" id="KwV-Uw-vch" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="BpW-2z-dHt"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Egk-BY-ljb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AlV-qD-9oa" kind="relationship" relationship="rootViewController" id="Sr3-pR-r8b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bCT-A1-4xC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2988" y="381"/>
         </scene>
     </scenes>
     <resources>
