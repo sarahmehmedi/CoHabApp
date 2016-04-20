@@ -53,7 +53,7 @@ public class Month {
     // 次の月の日付を取得
     public func next() -> Month {
         var nextYear = year
-        var nextMonth = month+1
+        var nextMonth = month
         if nextMonth > 12 {
             nextMonth = 1
             nextYear++
