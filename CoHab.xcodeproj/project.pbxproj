@@ -35,6 +35,7 @@
 		650A797B1C9DE51100AA0662 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A797A1C9DE51100AA0662 /* CalendarViewController.swift */; };
 		656DF67E1C9C7C6500328AF5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656DF67D1C9C7C6500328AF5 /* HomeViewController.swift */; };
 		83847C091CB1FF9600F1E419 /* BillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83847C081CB1FF9600F1E419 /* BillsViewController.swift */; };
+		83D1D4631CC7B0DB00B84C76 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D1D4621CC7B0DB00B84C76 /* check.png */; };
 		8BA604B61CC0545C00F30A1A /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA604B51CC0545C00F30A1A /* HelpViewController.swift */; };
 		D17036CD1C9A1302006E6061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17036CC1C9A1302006E6061 /* AppDelegate.swift */; };
 		D17036D41C9A1302006E6061 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D17036D31C9A1302006E6061 /* Assets.xcassets */; };
@@ -301,6 +302,7 @@
 		650A797A1C9DE51100AA0662 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		656DF67D1C9C7C6500328AF5 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		83847C081CB1FF9600F1E419 /* BillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillsViewController.swift; sourceTree = "<group>"; };
+		83D1D4621CC7B0DB00B84C76 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		86BEBDD4CA84FB156A338D78 /* Pods_CoHab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoHab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BA604B51CC0545C00F30A1A /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		D17036C91C9A1302006E6061 /* CoHab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoHab.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -783,6 +785,14 @@
 			name = Welcome;
 			sourceTree = "<group>";
 		};
+		83D1D4641CC7B0FC00B84C76 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				83D1D4621CC7B0DB00B84C76 /* check.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		B398DE2319658C134FC0AB74 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -833,6 +843,7 @@
 				D18B0E471CBC90820013DF2E /* TaskViewController.swift */,
 				D18B0E491CBC90A30013DF2E /* TaskFormViewController.swift */,
 				8BA604B51CC0545C00F30A1A /* HelpViewController.swift */,
+				83D1D4641CC7B0FC00B84C76 /* Images */,
 			);
 			path = CoHab;
 			sourceTree = "<group>";
@@ -994,6 +1005,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83D1D4631CC7B0DB00B84C76 /* check.png in Resources */,
 				415A12591CC2E11D00E38482 /* ProgressHUD.bundle in Resources */,
 				415A12581CC2E11D00E38482 /* ViewController.xib in Resources */,
 				415A12531CC2E11D00E38482 /* LaunchScreen.xib in Resources */,
