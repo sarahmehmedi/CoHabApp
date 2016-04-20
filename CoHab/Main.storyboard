@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="1FE061F9-820D-49EC-BBBD-E6650BE67E6F" translatesAutoresizingMaskIntoConstraints="NO" id="ilR-Uw-pc4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="FD1B4090-7C32-41D1-8F96-29717CCE0C4D" translatesAutoresizingMaskIntoConstraints="NO" id="ilR-Uw-pc4">
                                 <rect key="frame" x="114" y="81" width="373" height="413"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoOnly" translatesAutoresizingMaskIntoConstraints="NO" id="Zpz-Nd-UW2">
@@ -322,7 +322,7 @@
                         <outlet property="emailTextField" destination="cj4-0g-JeI" id="e6q-Tv-HkF"/>
                         <outlet property="passwordTextField" destination="77H-ZE-3XO" id="r7Z-GQ-VCq"/>
                         <outlet property="repeatPasswordTextField" destination="EYM-Sx-cEc" id="faV-7S-JMJ"/>
-                        <outlet property="usernameTextField" destination="77H-ZE-3XO" id="LhV-JB-eFj"/>
+                        <outlet property="usernameTextField" destination="u0I-Ug-moW" id="VVy-M7-mPq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fin-dW-qKi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -471,7 +471,7 @@ Continue by completing the form with the criteria requested.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fi6-fo-cFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3852" y="1206"/>
+            <point key="canvasLocation" x="3852" y="1208"/>
         </scene>
         <!--Bills View Controller-->
         <scene sceneID="UAD-k5-Atn">
@@ -995,7 +995,7 @@ Continue by completing the form with the criteria requested.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="1FE061F9-820D-49EC-BBBD-E6650BE67E6F" width="612" height="792">
+        <image name="FD1B4090-7C32-41D1-8F96-29717CCE0C4D" width="612" height="792">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGQkNYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QDwcI
 ERYbHCUmJygwMzY8P1UkbnVsbNQJCgsMDQ4PEFYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVwc1dOU0Nv
