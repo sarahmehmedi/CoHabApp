@@ -90,16 +90,6 @@ class TaskViewController: UIViewController {
         return taskName.count
     }
     
-    /*  gonna leave this here if need to reference it later on
-    // This actually creates our table
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! CustomCell
-        cell.taskName.text = taskName[indexPath.row]
-        cell.taskDescription.text = taskDescription[indexPath.row]
-        cell.taskDate.text = dueDate[indexPath.row]
-        return cell
-    }
-    */
     
     //Create table edited so theres a slide left/right function
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell

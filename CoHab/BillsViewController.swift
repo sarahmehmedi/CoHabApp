@@ -9,6 +9,7 @@
 import UIKit
 import MGSwipeTableCell
 import BTNavigationDropdownMenu
+import Firebase
 
 
 class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDelegate{
@@ -17,7 +18,6 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
     var billNameString:String!
     var billTotalString:String!
     var billDateString:String!
-    
     var menuView: BTNavigationDropdownMenu!
    
     @IBAction func backToBillsTable(segue:UIStoryboardSegue) {
