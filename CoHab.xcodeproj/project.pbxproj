@@ -49,6 +49,7 @@
 		D18B8C251CAF30D7003B3909 /* TTEventKit in CopyFiles */ = {isa = PBXBuildFile; fileRef = D18B8C241CAF30D7003B3909 /* TTEventKit */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D1B06BC51CBA2F9900F9E13F /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B06BC41CBA2F9900F9E13F /* CustomCell.swift */; };
 		D1B06BC91CBA3EF200F9E13F /* BillsFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B06BC81CBA3EF200F9E13F /* BillsFormViewController.swift */; };
+		D1F4211C1CC84A1E00D9B229 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F4211B1CC84A1E00D9B229 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -323,6 +324,7 @@
 		D18B8C241CAF30D7003B3909 /* TTEventKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TTEventKit; path = Pods/TTEventKit; sourceTree = "<group>"; };
 		D1B06BC41CBA2F9900F9E13F /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		D1B06BC81CBA3EF200F9E13F /* BillsFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillsFormViewController.swift; sourceTree = "<group>"; };
+		D1F4211B1CC84A1E00D9B229 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F3C86A275860E41ED0DC26D4 /* Pods-CoHab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoHab.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoHab/Pods-CoHab.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -844,6 +846,7 @@
 				D18B0E491CBC90A30013DF2E /* TaskFormViewController.swift */,
 				8BA604B51CC0545C00F30A1A /* HelpViewController.swift */,
 				83D1D4641CC7B0FC00B84C76 /* Images */,
+				D1F4211B1CC84A1E00D9B229 /* SettingsViewController.swift */,
 			);
 			path = CoHab;
 			sourceTree = "<group>";
@@ -1093,6 +1096,7 @@
 				D17036FD1C9A7A08006E6061 /* LoginViewController.swift in Sources */,
 				415A125A1CC2E11D00E38482 /* ProgressHUD.m in Sources */,
 				415A12521CC2E11D00E38482 /* AppDelegate.m in Sources */,
+				D1F4211C1CC84A1E00D9B229 /* SettingsViewController.swift in Sources */,
 				D17036CD1C9A1302006E6061 /* AppDelegate.swift in Sources */,
 				8BA604B61CC0545C00F30A1A /* HelpViewController.swift in Sources */,
 				D18B0E481CBC90820013DF2E /* TaskViewController.swift in Sources */,

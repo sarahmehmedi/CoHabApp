@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let items = ["Home", "Tasks", "Calendar", "Bills", "Group", "Building"]
+        let items = ["Home", "Tasks", "Calendar", "Bills", "Group", "Building", "Settings"]
         
         self.navigationController?.navigationBar.translucent = false
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.0/255.0, green:180/255.0, blue:220/255.0, alpha: 1.0)
@@ -50,6 +50,10 @@ class HomeViewController: UIViewController {
             }
             if (indexPath == 3){
                 let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("billsView")
+                self.showViewController(vc as! UIViewController, sender: vc)
+            }
+            if (indexPath == 6){
+                let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("settingsView")
                 self.showViewController(vc as! UIViewController, sender: vc)
             }
         }
