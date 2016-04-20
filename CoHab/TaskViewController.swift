@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MGSwipeTableCell
 
 class TaskViewController: UIViewController {
 
@@ -49,12 +50,66 @@ class TaskViewController: UIViewController {
         return taskName.count
     }
     
+    /*  gonna leave this here if need to reference it later on
     // This actually creates our table
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! CustomCell
         cell.taskName.text = taskName[indexPath.row]
         cell.taskDescription.text = taskDescription[indexPath.row]
         cell.taskDate.text = dueDate[indexPath.row]
+        return cell
+    }
+    */
+    
+    //Create table edited so theres a slide left/right function
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        
+        let reuseIdentifier = "programmaticCell"
+        var cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as! MGSwipeTableCell!
+        if cell == nil
+        {
+            cell = MGSwipeTableCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: reuseIdentifier)
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        cell.textLabel!.text = taskName[indexPath.row]
+        cell.detailTextLabel!.text = taskDescription[indexPath.row] + " due by " + dueDate[indexPath.row]
+        
+        // cell.delegate = self //optional
+        
+        //configures left buttons :
+        //I added the callback or in otherwords functionality for if you click a button on paid. right now the paid function deletes the cell.
+        cell.leftButtons = [MGSwipeButton(title: "Paid", icon: UIImage(named:"check.png"), backgroundColor: UIColor.greenColor(),callback: {
+            (sender: MGSwipeTableCell!) -> Bool in
+            print("Convenience callback for swipe buttons!")
+            cell.backgroundColor = UIColor.greenColor()
+            return true
+        })
+            ,MGSwipeButton(title: "Will Pay", icon: UIImage(named:"fav.png"), backgroundColor: UIColor.orangeColor(),callback: {
+                (sender: MGSwipeTableCell!) -> Bool in
+                print("Convenience callback for swipe buttons!")
+                cell.backgroundColor = UIColor.orangeColor()
+                return true
+            })]
+        cell.leftSwipeSettings.transition = MGSwipeTransition.Rotate3D
+        
+        
+        
+        //configures right buttons:
+        
+        cell.rightButtons = [MGSwipeButton(title: "Delete", backgroundColor: UIColor.redColor(),callback: {
+            (sender: MGSwipeTableCell!) -> Bool in
+            print("Convenience callback for swipe buttons!")
+            self.taskName.removeAtIndex(indexPath.row)
+            self.taskDescription.removeAtIndex(indexPath.row)
+            self.dueDate.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            return true
+        })
+            ,MGSwipeButton(title: "More",backgroundColor: UIColor.lightGrayColor())]
+        cell.rightSwipeSettings.transition = MGSwipeTransition.Rotate3D
+        
+        
         return cell
     }
     /*

@@ -77,7 +77,7 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
         return bills.count
     }
     
-   //Create table edited so theres a slide left/right function - will have to connect the slide functions to something later
+   //Create table edited so theres a slide left/right function
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         
