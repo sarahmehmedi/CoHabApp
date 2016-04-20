@@ -8,6 +8,7 @@
 
 import UIKit
 import MGSwipeTableCell
+import BTNavigationDropdownMenu
 
 class TaskViewController: UIViewController {
 
@@ -15,17 +16,56 @@ class TaskViewController: UIViewController {
     var taskNameString:String!
     var taskDescriptionString:String!
     var taskDateString:String!
-    
+    var menuView: BTNavigationDropdownMenu!
 
     override func viewDidLoad() {
+        self.navigationItem.setHidesBackButton(true, animated:true);
         if (taskNameString != nil || taskDescriptionString != nil || taskDateString != nil){
             taskName.append(taskNameString)
             taskDescription.append(taskDescriptionString)
             dueDate.append(taskDateString)
         }
         super.viewDidLoad()
+        let items = ["Home", "Tasks", "Calendar", "Bills", "Group", "Building"]
+        
+        self.navigationController?.navigationBar.translucent = false
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.0/255.0, green:180/255.0, blue:220/255.0, alpha: 1.0)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
+        menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, title: items[1], items: items)
+        menuView.cellHeight = 50
+        menuView.cellBackgroundColor = self.navigationController?.navigationBar.barTintColor
+        menuView.cellSelectionColor = UIColor(red: 0.0/255.0, green:160.0/255.0, blue:195.0/255.0, alpha: 1.0)
+        menuView.cellTextLabelColor = UIColor.whiteColor()
+        menuView.cellTextLabelFont = UIFont(name: "Avenir-Heavy", size: 17)
+        menuView.cellTextLabelAlignment = .Left // .Center // .Right // .Left
+        menuView.arrowPadding = 15
+        menuView.animationDuration = 0.5
+        menuView.maskBackgroundColor = UIColor.blackColor()
+        menuView.maskBackgroundOpacity = 0.3
+        menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
+            print("Did select item at index: \(indexPath)")
+            if (indexPath == 0){
+                let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("HomeVC")
+                self.showViewController(vc as! UIViewController, sender: vc)
+            }
+            if (indexPath == 1){
+                let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("taskView")
+                self.showViewController(vc as! UIViewController, sender: vc)
+            }
+            if (indexPath == 2){
+                let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("calenderView")
+                self.showViewController(vc as! UIViewController, sender: vc)
+            }
+            if (indexPath == 3){
+                let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("billsView")
+                self.showViewController(vc as! UIViewController, sender: vc)
+            }
+        }
+        self.navigationItem.titleView = menuView
         // Do any additional setup after loading the view.
     }
+ 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

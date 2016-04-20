@@ -28,7 +28,7 @@ class WelcomeViewController: UIViewController {
             */
             dispatch_async(dispatch_get_main_queue())
             {
-                let vc = UIStoryboard(name : "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeVC") as! UINavigationController
+                let vc = UIStoryboard(name : "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeVC") as! UIViewController
                 self.presentViewController(vc, animated: true, completion: nil)
             }
 
