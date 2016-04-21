@@ -14,33 +14,64 @@ import Firebase
 
 class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDelegate{
     
+    let ref = Firebase(url:"https://cohabapp.firebaseio.com/bills")
+    var items = [NSDictionary]()
+    
     // These three variables are being pulled from the form to add a new label
     var billNameString:String!
     var billTotalString:String!
     var billDateString:String!
     var menuView: BTNavigationDropdownMenu!
    
+    //looking at this, can the items in BillsFormViewcontroller be transferred here....?
     @IBAction func backToBillsTable(segue:UIStoryboardSegue) {
         if (segue.identifier == "backToBills") {
             let svc = segue.sourceViewController as! BillsFormViewController;
             // This formats the date into a string
             let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "dd-MM-yyyy"
+            dateFormatter.dateFormat = "MM-dd-yyyy"
             let billDueDateString = dateFormatter.stringFromDate(svc.billDueDate.date)
             // These are the variables we will transfer back to our table after the user submits them
             billNameString = svc.billName.text
             billTotalString = svc.billTotal.text
             billDateString = billDueDateString
             if (billNameString != nil || billTotalString != nil || billDateString != nil){
-                bills.append(billNameString)
-                total.append(billTotalString)
-                dueDate.append(billDateString)
+                billName.append(billNameString)
+                billTotal.append(billTotalString)
+                billDue.append(billDateString)
+                loadDataFromFirebase()
                  self.table.reloadData()
             }
         }
     }
+    
+    func loadDataFromFirebase(){
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
+        ref.observeEventType(.Value, withBlock: {snapshot in
+            var tempItems = [NSDictionary]()
+            
+            for item in snapshot.children{
+                let child = item as! FDataSnapshot
+                let dict = child.value as! NSDictionary
+                tempItems.append(dict)
+            }
+            
+            self.items = tempItems
+            print(tempItems)
+            self.table.reloadData()
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        })
+    }
+
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
+        items = [NSDictionary]()
+        
+        loadDataFromFirebase()
+        
+
         
     }
     // When the view is opened particularly if it is after submit it will add the new bills if there are new bill
@@ -96,9 +127,9 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var table: UITableView!
     
     // These are the three arrays that display what is in the table
-    var bills = ["Rent","Water"]
-    var total = ["400","50"]
-    var dueDate = ["10/05/2016","10/06/2016"]
+    var billName = ["Rent","Water"]
+    var billTotal = ["400","50"]
+    var billDue = ["10/05/2016","10/06/2016"]
     
 
     
@@ -115,7 +146,7 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
     
     // This is how many rows are in the table, I just used the size of the "bills" array
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bills.count
+        return items.count
     }
     
    //Create table edited so theres a slide left/right function
@@ -123,14 +154,23 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
     {
         
         let reuseIdentifier = "programmaticCell"
+        let dict = items[indexPath.row]
         var cell = self.table.dequeueReusableCellWithIdentifier(reuseIdentifier) as! MGSwipeTableCell!
         if cell == nil
         {
             cell = MGSwipeTableCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: reuseIdentifier)
         }
+        let bName = dict["billName"] as? String
+        let bTotal = dict["billTotal"] as? String
+        let bDue = dict["billDue"] as? String
+        
+        
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-        cell.textLabel!.text = bills[indexPath.row]
-        cell.detailTextLabel!.text = total[indexPath.row] + " dollars owed by " + dueDate[indexPath.row]
+        cell.textLabel!.text = bName
+        cell.detailTextLabel!.text = bTotal! + " dollars owed by " + bDue!
+        
+        //i'm not sure how to make another textlabel (I tried adding this to a string but it doesnt work
+        //" dollars owed by " + dict["billDue"] as? String
       
         // cell.delegate = self //optional
         
@@ -158,9 +198,9 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
         cell.rightButtons = [MGSwipeButton(title: "Delete", backgroundColor: UIColor.redColor(),callback: {
             (sender: MGSwipeTableCell!) -> Bool in
             print("Convenience callback for swipe buttons!")
-            self.bills.removeAtIndex(indexPath.row)
-            self.total.removeAtIndex(indexPath.row)
-            self.dueDate.removeAtIndex(indexPath.row)
+            self.billName.removeAtIndex(indexPath.row)
+            self.billTotal.removeAtIndex(indexPath.row)
+            self.billDue.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
             return true
         })
@@ -173,6 +213,7 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
     
     //this function will be used to remove items
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
    
     }
 }
