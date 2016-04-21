@@ -135,6 +135,7 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
         // cell.delegate = self //optional
         
         //configures left buttons :
+        
         //I added the callback or in otherwords functionality for if you click a button on paid. right now the paid function deletes the cell.
         cell.leftButtons = [MGSwipeButton(title: "Paid", icon: UIImage(named:"check.png"), backgroundColor: UIColor.greenColor(),callback: {
             (sender: MGSwipeTableCell!) -> Bool in
@@ -168,6 +169,11 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
         
         
         return cell
+    }
+    
+    //this function will be used to remove items
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+   
     }
 }
 

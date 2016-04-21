@@ -39,9 +39,9 @@ class BillsFormViewController: UIViewController {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MM-dd-yyyy"
         let dateString = dateFormatter.stringFromDate(billDateConverted)
-        
         let bDue = dateString
         
+        //makes all items into type NSDictionary so it can be stored in database as NSString
         let user: NSDictionary = ["billName": bName!, "billTotal":bTotal!, "billDue":bDue]
         
         //adds firebase child node
