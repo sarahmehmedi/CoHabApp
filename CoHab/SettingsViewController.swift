@@ -11,16 +11,53 @@ import UIKit
 class SettingsViewController: UIViewController {
     
     @IBOutlet weak var groupIDConfirmation: UILabel!
+    @IBOutlet weak var joinGroupInput: UITextField!
 
-    var backendless = Backendless.sharedInstance()
+    @IBOutlet weak var createGroupInput: UITextField!
+    @IBAction func createGroupButton(sender: AnyObject) {
+        let user = self.backendless.userService.currentUser
+        let groupID = user.getProperty("groupID") as? String
+        if (groupID != nil){
+            let alertController = UIAlertController(title: "Hey!", message:
+                "You're already in a group:", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+        else {
+            user.setProperty( "groupID", object: createGroupInput.text)
+            backendless.userService.update(user);
+            
+        }
+    }
     
+    @IBAction func joinGroupButton(sender: AnyObject){
+        
+    }
+    
+    @IBAction func removeGroup(sender: AnyObject) {
+        let user = self.backendless.userService.currentUser
+        let groupID = user.getProperty("groupID") as? String
+        if (groupID == nil){
+            let alertController = UIAlertController(title: "Hey!", message:
+                "You aren't in a group:", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+        else {
+          user.removeProperty("groupID")
+          backendless.userService.update(user);
+        }
+    }
+    
+    var backendless = Backendless.sharedInstance()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         let user = self.backendless.userService.currentUser
+       var dataStore = self.backendless.persistenceService.of(BackendlessUser.ofClass())
+        dataStore.find()
+        let user = self.backendless.userService.currentUser
         let groupID = user.getProperty("groupID") as? String
-        print("groupID: \(groupID!)")
-        
+        print("groupID: \(groupID)")
         if (groupID == nil){
             self.groupIDConfirmation.text = "you're not in a group "
         }
