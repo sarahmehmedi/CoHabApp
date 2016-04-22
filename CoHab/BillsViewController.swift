@@ -39,7 +39,7 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
                 billName.append(billNameString)
                 billTotal.append(billTotalString)
                 billDue.append(billDateString)
-                loadDataFromFirebase()
+           //     loadDataFromFirebase()
                  self.table.reloadData()
             }
         }
@@ -62,6 +62,7 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
             self.table.reloadData()
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         })
+        self.table.reloadData()
     }
 
 
@@ -154,23 +155,14 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
     {
         
         let reuseIdentifier = "programmaticCell"
-        let dict = items[indexPath.row]
+        //let dict = items[indexPath.row]
         var cell = self.table.dequeueReusableCellWithIdentifier(reuseIdentifier) as! MGSwipeTableCell!
         if cell == nil
         {
             cell = MGSwipeTableCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: reuseIdentifier)
         }
-        let bName = dict["billName"] as? String
-        let bTotal = dict["billTotal"] as? String
-        let bDue = dict["billDue"] as? String
-        
-        
-        cell.selectionStyle = UITableViewCellSelectionStyle.None
-        cell.textLabel!.text = bName
-        cell.detailTextLabel!.text = bTotal! + " dollars owed by " + bDue!
-        
-        //i'm not sure how to make another textlabel (I tried adding this to a string but it doesnt work
-        //" dollars owed by " + dict["billDue"] as? String
+        configureCell(cell, indexPath: indexPath)
+
       
         // cell.delegate = self //optional
         
@@ -215,6 +207,20 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
    
+    }
+    
+    func configureCell(cell: MGSwipeTableCell, indexPath: NSIndexPath){
+        let dict = items[indexPath.row]
+        
+        let bName = dict["billName"] as? String
+        let bTotal = dict["billTotal"] as? String
+        let bDue = dict["billDue"] as? String
+        
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        cell.textLabel?.text = bName
+        cell.detailTextLabel!.text = bTotal! + " dollars owed by " + bDue!
+        
+        
     }
 }
 
