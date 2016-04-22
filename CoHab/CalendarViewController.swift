@@ -10,6 +10,7 @@ import UIKit
 import EventKit
 import TTEventKit
 import BTNavigationDropdownMenu
+import Firebase
 
 
 class CalendarViewController: UIViewController, CalendarDelegate {
@@ -18,6 +19,8 @@ class CalendarViewController: UIViewController, CalendarDelegate {
     var menuView: BTNavigationDropdownMenu!
     
     @IBOutlet weak var header: UINavigationItem!
+    
+    let ref = Firebase(url:"https://cohabapp.firebaseio.com/events")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,9 +106,19 @@ class CalendarViewController: UIViewController, CalendarDelegate {
         event.notes = "This is a test event"
         EventUI.showEditView(event)
         
-        if event.status.rawValue == 1 {
-            let new: NSDictionary = ["eventTitle": event.title, "eventStart": NSDateFormatter.stringFromDate(<#T##NSDateFormatter#>) event.startDate, "eventEnd": event.endDate, "eventNotes": event.notes!, "eventLocation": event.location!]
-        }
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        
+        //test if event is 'Confirmed' status
+        //if event.status.rawValue == 1 {
+            //creates dictionary of all pertinent event information
+            let new: NSDictionary = ["eventTitle": event.title, "eventStart": dateFormatter.stringFromDate(event.startDate), "eventEnd": dateFormatter.stringFromDate(event.endDate), "eventNotes": event.notes!, "eventLocation": event.location!]
+            //creates node for event in database
+            let group = self.ref.childByAppendingPath(event.title)
+            //adds event info to node
+            group.setValue(new)
+            
+        //}
     }
     
     //=================================

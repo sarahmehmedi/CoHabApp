@@ -31,7 +31,7 @@ public class Month {
     
     public func firstWeekday() -> Weekday {
         let comp = nscalendar.components(.Weekday, fromDate: nsdate)
-        return Weekday(rawValue: comp.weekday)!
+        return Weekday(rawValue: comp.weekday - 1)!
     }
     
     public func lastWeekday() -> Weekday {
