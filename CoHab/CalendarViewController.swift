@@ -60,15 +60,10 @@ class CalendarViewController: UIViewController, CalendarDelegate {
         self.navigationItem.titleView = menuView
         // Do any additional setup after loading the view.
         self.navigationItem.setHidesBackButton(true, animated:true);
-        let flags: NSCalendarUnit = NSCalendarUnit.Year
-        let currDate = NSDate()
-        let components = NSCalendar.currentCalendar().components(flags, fromDate: currDate)
-        
         
         calendarView.delegate = self
-        
-        calendarView.current.year = components.year
-        calendarView.current.month = components.month
+        calendarView.current.year = NSCalendar.currentCalendar().component(.Year, fromDate: NSDate())
+        calendarView.current.month = NSCalendar.currentCalendar().component(.Month, fromDate: NSDate())
         
         let year = calendarView.current.year
         let month = calendarView.current.month
@@ -107,6 +102,10 @@ class CalendarViewController: UIViewController, CalendarDelegate {
         event.endDate = event.startDate
         event.notes = "This is a test event"
         EventUI.showEditView(event)
+        
+        if event.status.rawValue == 1 {
+            let new: NSDictionary = ["eventTitle": event.title, "eventStart": NSDateFormatter.stringFromDate(<#T##NSDateFormatter#>) event.startDate, "eventEnd": event.endDate, "eventNotes": event.notes!, "eventLocation": event.location!]
+        }
     }
     
     //=================================

@@ -18,10 +18,9 @@ public class Month {
     }
     
     public init(year: Int, month: Int) {
-        self.year = year
-        self.month = month
+        self.year = nscalendar.component(.Year, fromDate: NSDate())
+        self.month = nscalendar.component(.Month, fromDate: NSDate())
         
-    
         nsdate = NSDate()
     }
     
@@ -32,11 +31,11 @@ public class Month {
     
     public func firstWeekday() -> Weekday {
         let comp = nscalendar.components(.Weekday, fromDate: nsdate)
-        return Weekday(rawValue: comp.weekday - 1)!
+        return Weekday(rawValue: comp.weekday)!
     }
     
     public func lastWeekday() -> Weekday {
-        return firstWeekday() + (length() - 1);
+        return firstWeekday() + (length());
     }
     
     
@@ -53,10 +52,10 @@ public class Month {
     // 次の月の日付を取得
     public func next() -> Month {
         var nextYear = year
-        var nextMonth = month
+        var nextMonth = (month + 1)
         if nextMonth > 12 {
             nextMonth = 1
-            nextYear++
+            nextYear += 1
         }
         return Month(year: nextYear, month: nextMonth)
     }
@@ -67,7 +66,7 @@ public class Month {
         var prevMonth = (month - 1)
         if prevMonth < 1 {
             prevMonth = 12
-            prevYear--
+            prevYear -= 1
         }
         return Month(year: prevYear, month: prevMonth)
     }
@@ -76,19 +75,19 @@ public class Month {
     private func toNSdate() -> NSDate {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd"
-        return dateFormatter.dateFromString(String(format: "%04d/%02d/01", year, month))!
+        return dateFormatter.dateFromString(String(format: "%d/%d/%d", year, month, nscalendar.component(.Day, fromDate: NSDate())))!
     }
     
 }
 
 public enum Weekday: Int {
     case Sunday = 0
-    case Monday
-    case Tuesday
-    case Wednesday
-    case Thursday
-    case Friday
-    case Saturday
+    case Monday = 1
+    case Tuesday = 2
+    case Wednesday = 3
+    case Thursday = 4
+    case Friday = 5
+    case Saturday = 6
     
 }
 
