@@ -8,12 +8,13 @@
 
 import UIKit
 import EventKit
+import EventKitUI
 import TTEventKit
 import BTNavigationDropdownMenu
 import Firebase
 
 
-class CalendarViewController: UIViewController, CalendarDelegate {
+class CalendarViewController: UIViewController {
     
     @IBOutlet weak var calendarView: CalendarView!
     var menuView: BTNavigationDropdownMenu!
@@ -21,6 +22,7 @@ class CalendarViewController: UIViewController, CalendarDelegate {
     @IBOutlet weak var header: UINavigationItem!
     
     let ref = Firebase(url:"https://cohabapp.firebaseio.com/events")
+    let backendlessUser = Backendless.sharedInstance().userService.currentUser
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +66,7 @@ class CalendarViewController: UIViewController, CalendarDelegate {
         // Do any additional setup after loading the view.
         self.navigationItem.setHidesBackButton(true, animated:true);
         
-        calendarView.delegate = self
+//        calendarView.delegate = self
         calendarView.current.year = NSCalendar.currentCalendar().component(.Year, fromDate: NSDate())
         calendarView.current.month = NSCalendar.currentCalendar().component(.Month, fromDate: NSDate())
         
@@ -104,21 +106,19 @@ class CalendarViewController: UIViewController, CalendarDelegate {
         event.startDate = NSDate()
         event.endDate = event.startDate
         event.notes = "This is a test event"
+        event.location = "Loyola University Chicago"
         EventUI.showEditView(event)
         
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
         
-        //test if event is 'Confirmed' status
-        //if event.status.rawValue == 1 {
-            //creates dictionary of all pertinent event information
-            let new: NSDictionary = ["eventTitle": event.title, "eventStart": dateFormatter.stringFromDate(event.startDate), "eventEnd": dateFormatter.stringFromDate(event.endDate), "eventNotes": event.notes!, "eventLocation": event.location!]
-            //creates node for event in database
-            let group = self.ref.childByAppendingPath(event.title)
-            //adds event info to node
-            group.setValue(new)
-            
-        //}
+        //creates dictionary of all pertinent event information
+        let new: NSDictionary = ["eventTitle": event.title, "eventStart": dateFormatter.stringFromDate(event.startDate), "eventEnd": dateFormatter.stringFromDate(event.endDate), "eventNotes": event.notes!, "eventLocation": event.location!, "eventCreator": backendlessUser.email]
+        //creates node for event in database
+        let group = self.ref.childByAppendingPath(event.title)
+        //adds event info to node
+        group.setValue(new)
+        
     }
     
     //=================================
@@ -127,8 +127,9 @@ class CalendarViewController: UIViewController, CalendarDelegate {
     
     func changedMonth(year: Int, month: Int) {
         let monthEn = ["January", "Febrary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+        print("\(year) \(monthEn[month - 1])")
         
-        //header.title = "\(year) \(monthEn[month - 1])"
+//        header.title = "\(year) \(monthEn[month - 1])"
         
     }
     
