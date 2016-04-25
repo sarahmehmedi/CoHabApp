@@ -79,7 +79,7 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
     super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated:true);
-        let items = ["Home", "Tasks", "Calendar", "Bills", "Group", "Building"]
+        let items = ["Home", "Tasks", "Calendar", "Bills", "Chat"]
         
         self.navigationController?.navigationBar.translucent = false
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.0/255.0, green:180/255.0, blue:220/255.0, alpha: 1.0)
@@ -113,6 +113,12 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
             if (indexPath == 3){
                 let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("billsView")
                 self.showViewController(vc as! UIViewController, sender: vc)
+            }
+            if(indexPath == 4)
+            {
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ChatVC") as! UITabBarController
+                vc.selectedIndex = 0
+                self.presentViewController(vc, animated: true, completion: nil)
             }
         }
         self.navigationItem.titleView = menuView

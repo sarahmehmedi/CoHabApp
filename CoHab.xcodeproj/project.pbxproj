@@ -16,6 +16,10 @@
 		415A12581CC2E11D00E38482 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 415A124A1CC2E11D00E38482 /* ViewController.xib */; };
 		415A12591CC2E11D00E38482 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 415A124F1CC2E11D00E38482 /* ProgressHUD.bundle */; };
 		415A125A1CC2E11D00E38482 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 415A12511CC2E11D00E38482 /* ProgressHUD.m */; };
+		417DD2221CCEA1DB00309364 /* GroupChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417DD2211CCEA1DB00309364 /* GroupChatTableViewCell.swift */; };
+		417DD2241CCEA45600309364 /* GroupChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417DD2231CCEA45600309364 /* GroupChatViewController.swift */; };
+		417DD2261CCEA7BE00309364 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417DD2251CCEA7BE00309364 /* Chat.swift */; };
+		417DD2281CCEB1E400309364 /* ChooseUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417DD2271CCEB1E400309364 /* ChooseUserViewController.swift */; };
 		41A55DD11CC28BEC0079B752 /* backendless.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A55D071CC28BEC0079B752 /* backendless.a */; };
 		41A55DD21CC28BEC0079B752 /* CommLibiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A55D4B1CC28BEC0079B752 /* CommLibiOS.a */; };
 		41A55DD31CC28BEC0079B752 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A55DB11CC28BEC0079B752 /* libavcodec.a */; };
@@ -114,6 +118,10 @@
 		415A124F1CC2E11D00E38482 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		415A12501CC2E11D00E38482 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		415A12511CC2E11D00E38482 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		417DD2211CCEA1DB00309364 /* GroupChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupChatTableViewCell.swift; sourceTree = "<group>"; };
+		417DD2231CCEA45600309364 /* GroupChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupChatViewController.swift; sourceTree = "<group>"; };
+		417DD2251CCEA7BE00309364 /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		417DD2271CCEB1E400309364 /* ChooseUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseUserViewController.swift; sourceTree = "<group>"; };
 		41A55D071CC28BEC0079B752 /* backendless.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = backendless.a; sourceTree = "<group>"; };
 		41A55D091CC28BEC0079B752 /* AbstractProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractProperty.h; sourceTree = "<group>"; };
 		41A55D0A1CC28BEC0079B752 /* AbstractQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractQuery.h; sourceTree = "<group>"; };
@@ -412,6 +420,16 @@
 				415A12511CC2E11D00E38482 /* ProgressHUD.m */,
 			);
 			path = ProgressHUD;
+			sourceTree = "<group>";
+		};
+		417DD21F1CCE90FB00309364 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				417DD2211CCEA1DB00309364 /* GroupChatTableViewCell.swift */,
+				417DD2231CCEA45600309364 /* GroupChatViewController.swift */,
+				417DD2271CCEB1E400309364 /* ChooseUserViewController.swift */,
+			);
+			name = Chat;
 			sourceTree = "<group>";
 		};
 		41A55D051CC28BEC0079B752 /* lib */ = {
@@ -834,11 +852,12 @@
 		D17036CB1C9A1302006E6061 /* CoHab */ = {
 			isa = PBXGroup;
 			children = (
+				417DD21F1CCE90FB00309364 /* Chat */,
 				D17036CC1C9A1302006E6061 /* AppDelegate.swift */,
+				83847C081CB1FF9600F1E419 /* BillsViewController.swift */,
 				41DEE0DB1CC2C95C0015E6D3 /* Welcome */,
 				D17036D31C9A1302006E6061 /* Assets.xcassets */,
 				D17037001C9B6D2C006E6061 /* Main.storyboard */,
-				83847C081CB1FF9600F1E419 /* BillsViewController.swift */,
 				650A797A1C9DE51100AA0662 /* CalendarViewController.swift */,
 				6578CB021CCAD334007D8465 /* DayViewController.swift */,
 				D17036D51C9A1302006E6061 /* LaunchScreen.storyboard */,
@@ -850,6 +869,7 @@
 				8BA604B51CC0545C00F30A1A /* HelpViewController.swift */,
 				83D1D4641CC7B0FC00B84C76 /* Images */,
 				D1F4211B1CC84A1E00D9B229 /* SettingsViewController.swift */,
+				417DD2251CCEA7BE00309364 /* Chat.swift */,
 			);
 			path = CoHab;
 			sourceTree = "<group>";
@@ -1102,13 +1122,17 @@
 				D1F4211C1CC84A1E00D9B229 /* SettingsViewController.swift in Sources */,
 				D17036CD1C9A1302006E6061 /* AppDelegate.swift in Sources */,
 				6578CB031CCAD334007D8465 /* DayViewController.swift in Sources */,
+				417DD2281CCEB1E400309364 /* ChooseUserViewController.swift in Sources */,
 				8BA604B61CC0545C00F30A1A /* HelpViewController.swift in Sources */,
 				D18B0E481CBC90820013DF2E /* TaskViewController.swift in Sources */,
 				415A12571CC2E11D00E38482 /* ViewController.m in Sources */,
+				417DD2261CCEA7BE00309364 /* Chat.swift in Sources */,
+				417DD2241CCEA45600309364 /* GroupChatViewController.swift in Sources */,
 				41A55DE01CC2998A0079B752 /* WelcomeViewController.swift in Sources */,
 				41A55DE21CC2A5490079B752 /* RegisterViewController.swift in Sources */,
 				D1B06BC51CBA2F9900F9E13F /* CustomCell.swift in Sources */,
 				83847C091CB1FF9600F1E419 /* BillsViewController.swift in Sources */,
+				417DD2221CCEA1DB00309364 /* GroupChatTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
