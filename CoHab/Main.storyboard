@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="FD162A9D-9707-49E7-95E8-A6EA6BA4E66E" translatesAutoresizingMaskIntoConstraints="NO" id="ilR-Uw-pc4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="67B7C990-EFD1-4DE6-8440-CD35CA56C79D" translatesAutoresizingMaskIntoConstraints="NO" id="ilR-Uw-pc4">
                                 <rect key="frame" x="114" y="81" width="373" height="413"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoOnly" translatesAutoresizingMaskIntoConstraints="NO" id="Zpz-Nd-UW2">
@@ -1068,7 +1068,6 @@ Continue by completing the form with the criteria requested.</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="newChatBarButtonPressed" destination="BsE-Zl-kvA" id="YX0-tm-Cy6"/>
                         <outlet property="tableView" destination="Qvt-5g-9aw" id="uIN-Zo-QOL"/>
                         <segue destination="O8h-ZD-LHl" kind="presentation" identifier="groupChatToChooseUserVC" id="VZ5-BR-7pb"/>
                     </connections>
@@ -1482,7 +1481,7 @@ Continue by completing the form with the criteria requested.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="FD162A9D-9707-49E7-95E8-A6EA6BA4E66E" width="612" height="792">
+        <image name="67B7C990-EFD1-4DE6-8440-CD35CA56C79D" width="612" height="792">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGQkNYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QDwcI
 ERYbHCUmJygwMzY8P1UkbnVsbNQJCgsMDQ4PEFYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVwc1dOU0Nv
