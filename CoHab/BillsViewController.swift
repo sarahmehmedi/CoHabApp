@@ -170,8 +170,6 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
         configureCell(cell, indexPath: indexPath)
 
       
-        // cell.delegate = self //optional
-        
         //configures left buttons :
         
         //I added the callback or in otherwords functionality for if you click a button on paid. right now the paid function deletes the cell.
@@ -196,10 +194,23 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
         cell.rightButtons = [MGSwipeButton(title: "Delete", backgroundColor: UIColor.redColor(),callback: {
             (sender: MGSwipeTableCell!) -> Bool in
             print("Convenience callback for swipe buttons!")
-            self.billName.removeAtIndex(indexPath.row)
-            self.billTotal.removeAtIndex(indexPath.row)
-            self.billDue.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            
+            if self.items.count >= 1 {
+                tableView.beginUpdates()
+                let dict = self.items[indexPath.row]
+                let name = dict["billName"] as! String
+                
+                let profile = self.ref.childByAppendingPath(name)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                self.items.removeAtIndex(indexPath.row)
+                profile.removeValue()
+                
+                if self.items.count == 0 {
+                    tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                }
+                tableView.endUpdates()
+            }
+            
             return true
         })
             ,MGSwipeButton(title: "More",backgroundColor: UIColor.lightGrayColor())]
@@ -209,11 +220,6 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
-    //this function will be used to remove items
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-   
-    }
     
     func configureCell(cell: MGSwipeTableCell, indexPath: NSIndexPath){
         let dict = items[indexPath.row]
@@ -225,7 +231,6 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.textLabel?.text = bName
         cell.detailTextLabel!.text = bTotal! + " dollars owed by " + bDue!
-        
         
     }
 }
