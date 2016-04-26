@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import MGSwipeTableCell
 
-class DayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class DayViewController: UIViewController, /*UITableViewDataSource,*/ UITableViewDelegate {
     
     let ref = Firebase(url: "https://cohabapp.firebaseio.com/events")
     var items = [NSDictionary]()
