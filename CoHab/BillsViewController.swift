@@ -195,6 +195,7 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
             (sender: MGSwipeTableCell!) -> Bool in
             print("Convenience callback for swipe buttons!")
             
+            //checks to see if items is greater than 1 and removes from database and screen
             if self.items.count >= 1 {
                 tableView.beginUpdates()
                 let dict = self.items[indexPath.row]

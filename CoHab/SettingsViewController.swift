@@ -64,6 +64,8 @@ class SettingsViewController: UIViewController {
         else{
             self.groupIDConfirmation.text = "you're in group: \(groupID!)"
         }
+        //CALLS function below to print users to screen
+        getUsersFromGroupID()
         // Do any additional setup after loading the view.
     }
 
@@ -72,6 +74,27 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //this function queries all current users emails, I dont think the groupID is not attached to BackendlessUser
+    func getUsersFromGroupID(){
+        let query = BackendlessDataQuery()
+        backendless.persistenceService.of(BackendlessUser.ofClass()).find(query, response: { (groupID : BackendlessCollection!) ->() in
+            
+            let currentPage = groupID.getCurrentPage()
+            print("USERS COUNT: \(currentPage.count)")
+            print("Current Users: \(groupID.totalObjects)")
+            
+            //maybe need to add groupID to BackendlessUser so that we can call it
+            for id in currentPage as! [BackendlessUser]{
+                print("Current User Emails: \(id.email)")
+            }
+
+            }, error: { ( fault: Fault!) -> () in
+                print("error \(fault)")
+            }
+            
+        )
+    }
 
     /*
     // MARK: - Navigation
