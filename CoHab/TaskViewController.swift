@@ -131,10 +131,7 @@ class TaskViewController: UIViewController {
             })]
         cell.leftSwipeSettings.transition = MGSwipeTransition.Rotate3D
         
-        
-        
         //configures right buttons:
-        
         cell.rightButtons = [MGSwipeButton(title: "Delete", backgroundColor: UIColor.redColor(),callback: {
             (sender: MGSwipeTableCell!) -> Bool in
             print("Convenience callback for swipe buttons!")

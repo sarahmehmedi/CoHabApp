@@ -70,6 +70,13 @@ class DayViewController: UIViewController, /*UITableViewDataSource,*/ UITableVie
         return items.count
     }
     
+    var eventTitle = ["Happy 4/20", "Feminist Theology", "Software Engineering"]
+    var eventDesc = ["daily activites/festivities", "Analyzing Adam & Eve", "developing CoHab"]
+    var eventStart = ["04/20/16 04:20", "04/20/16 04:45", "04/20/16 05:15"]
+    var eventEnd = ["04/20/16 04:30", "04/20/16 05:00", "04/20/16 05:30"]
+    var eventLocation = ["6327 N Broadway", "Loyola University Chicago", "LUC Water Tower"]
+    var eventCreator = ["nieky.allen", "sarah.mehmedi", "christian.lanzer"]
+    
     //Create table edited so theres a slide right function
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
@@ -84,7 +91,6 @@ class DayViewController: UIViewController, /*UITableViewDataSource,*/ UITableVie
         configureCell(cell, indexPath: indexPath)
         
         //configures right buttons:
-        
         cell.rightButtons = [MGSwipeButton(title: "Delete", backgroundColor: UIColor.redColor(),callback: {
             (sender: MGSwipeTableCell!) -> Bool in
             print("Convenience callback for swipe buttons!")
@@ -110,7 +116,6 @@ class DayViewController: UIViewController, /*UITableViewDataSource,*/ UITableVie
             ,MGSwipeButton(title: "More",backgroundColor: UIColor.lightGrayColor())]
         cell.rightSwipeSettings.transition = MGSwipeTransition.Rotate3D
         
-        
         return cell
     }
     
@@ -126,7 +131,9 @@ class DayViewController: UIViewController, /*UITableViewDataSource,*/ UITableVie
         let eCreator = dict["eventCreator"] as? String
         
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-        cell.textLabel?.text = eTitle
+        cell.textLabel?.text = eTitle! + " by " + eCreator!
+        cell.detailTextLabel!.text = "Location: " + eLocation! + "\nDescription: " + eDesc! + "\nFrom " + eStart! + " to " + eEnd!
+
         
     }
 }
