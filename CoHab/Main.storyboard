@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="268055D3-559C-49FE-8FB8-28722FC34581" translatesAutoresizingMaskIntoConstraints="NO" id="ilR-Uw-pc4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="D164F70C-84E8-4013-965B-70D379392CDB" translatesAutoresizingMaskIntoConstraints="NO" id="ilR-Uw-pc4">
                                 <rect key="frame" x="114" y="81" width="373" height="413"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoOnly" translatesAutoresizingMaskIntoConstraints="NO" id="Zpz-Nd-UW2">
@@ -1279,6 +1279,7 @@ Continue by completing the form with the criteria requested.</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="table" destination="FBf-Jn-a38" id="9DD-Ll-C1Q"/>
                         <segue destination="YR1-1Z-CtX" kind="show" identifier="addTask" id="1Nr-Bu-0ru"/>
                     </connections>
                 </viewController>
@@ -1464,7 +1465,7 @@ Continue by completing the form with the criteria requested.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="268055D3-559C-49FE-8FB8-28722FC34581" width="612" height="792">
+        <image name="D164F70C-84E8-4013-965B-70D379392CDB" width="612" height="792">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGSUpYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEAcI
 ERYbHCUmJysyNzo9Q0ZVJG51bGzUCQoLDA0ODxBWJGNsYXNzXE5TSW1hZ2VGbGFnc1ZOU1JlcHNXTlND

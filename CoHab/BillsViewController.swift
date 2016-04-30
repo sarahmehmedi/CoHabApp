@@ -39,8 +39,7 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
                 billName.append(billNameString)
                 billTotal.append(billTotalString)
                 billDue.append(billDateString)
-           //     loadDataFromFirebase()
-                 self.table.reloadData()
+                self.table.reloadData()
             }
         }
     }
@@ -58,7 +57,6 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
             }
             
             self.items = tempItems
-            print(tempItems)
             self.table.reloadData()
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         })
@@ -161,7 +159,6 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
     {
         
         let reuseIdentifier = "programmaticCell"
-        //let dict = items[indexPath.row]
         var cell = self.table.dequeueReusableCellWithIdentifier(reuseIdentifier) as! MGSwipeTableCell!
         if cell == nil
         {
@@ -173,10 +170,15 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
         //configures left buttons :
         
         //I added the callback or in otherwords functionality for if you click a button on paid. right now the paid function deletes the cell.
-        cell.leftButtons = [MGSwipeButton(title: "Paid", icon: UIImage(named:"check.png"), backgroundColor: UIColor.greenColor(),callback: {
+        cell.leftButtons = [MGSwipeButton(title: "Paid", backgroundColor: UIColor.greenColor(),callback: {
             (sender: MGSwipeTableCell!) -> Bool in
             print("Convenience callback for swipe buttons!")
             cell.backgroundColor = UIColor.greenColor()
+//            
+//            var billItem = items[indexPath.row]
+//            let toggleCompletion = !billItem.completed
+//            billItem.ref?.updateChildValues(["completed":toggledCompletion
+               // ])
             return true
         })
             ,MGSwipeButton(title: "Will Pay", icon: UIImage(named:"fav.png"), backgroundColor: UIColor.orangeColor(),callback: {

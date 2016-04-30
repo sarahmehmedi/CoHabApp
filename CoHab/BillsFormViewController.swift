@@ -42,7 +42,7 @@ class BillsFormViewController: UIViewController {
         let bDue = dateString
         
         //makes all items into type NSDictionary so it can be stored in database as NSString
-        let user: NSDictionary = ["billName": bName!, "billTotal":bTotal!, "billDue":bDue]
+        let user: NSDictionary = ["billName": bName!, "billTotal":bTotal!, "billDue":bDue, "bCompleted":false]
         
         //adds firebase child node
         let group = self.ref.childByAppendingPath(bName!)

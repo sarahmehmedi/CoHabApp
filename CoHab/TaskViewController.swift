@@ -9,8 +9,13 @@
 import UIKit
 import MGSwipeTableCell
 import BTNavigationDropdownMenu
+import Firebase
 
 class TaskViewController: UIViewController {
+
+    
+    let ref = Firebase(url:"https://cohabapp.firebaseio.com/tasks")
+    var tasks = [NSDictionary]()
 
     // These three variables are being pulled from the form to add a new label
     var taskNameString:String!
@@ -24,6 +29,7 @@ class TaskViewController: UIViewController {
             taskName.append(taskNameString)
             taskDescription.append(taskDescriptionString)
             dueDate.append(taskDateString)
+            self.table.reloadData()
         }
         super.viewDidLoad()
         let items = ["Home", "Tasks", "Calendar", "Bills", "Chat"]
@@ -74,6 +80,32 @@ class TaskViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
  
+    func loadDataFromFirebase(){
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        ref.observeEventType(.Value, withBlock: {snapshot in
+            var tempTasks = [NSDictionary]()
+            
+            for task in snapshot.children{
+                let child = task as! FDataSnapshot
+                let dict = child.value as! NSDictionary
+                tempTasks.append(dict)
+            }
+            
+            self.tasks = tempTasks
+            self.table.reloadData()
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        })
+        self.table.reloadData()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        tasks = [NSDictionary]()
+        
+        loadDataFromFirebase()
+        
+    }
+    @IBOutlet weak var table: UITableView!
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -95,7 +127,7 @@ class TaskViewController: UIViewController {
     
     // This is how many rows are in the table, I just used the size of the "bills" array
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return taskName.count
+        return tasks.count
     }
     
     
@@ -109,13 +141,12 @@ class TaskViewController: UIViewController {
         {
             cell = MGSwipeTableCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: reuseIdentifier)
         }
-        cell.selectionStyle = UITableViewCellSelectionStyle.None
-        cell.textLabel!.text = taskName[indexPath.row]
-        cell.detailTextLabel!.text = taskDescription[indexPath.row] + " due by " + dueDate[indexPath.row]
+
+        configureCell(cell, indexPath: indexPath)
         
-        // cell.delegate = self //optional
         
         //configures left buttons :
+        
         //I added the callback or in otherwords functionality for if you click a button on paid. right now the paid function deletes the cell.
         cell.leftButtons = [MGSwipeButton(title: "", icon: UIImage(named:"check.png"), backgroundColor: UIColor.greenColor(),callback: {
             (sender: MGSwipeTableCell!) -> Bool in
@@ -132,13 +163,27 @@ class TaskViewController: UIViewController {
         cell.leftSwipeSettings.transition = MGSwipeTransition.Rotate3D
         
         //configures right buttons:
+        
         cell.rightButtons = [MGSwipeButton(title: "Delete", backgroundColor: UIColor.redColor(),callback: {
             (sender: MGSwipeTableCell!) -> Bool in
             print("Convenience callback for swipe buttons!")
-            self.taskName.removeAtIndex(indexPath.row)
-            self.taskDescription.removeAtIndex(indexPath.row)
-            self.dueDate.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            
+            if self.tasks.count >= 1 {
+                tableView.beginUpdates()
+                let dict = self.tasks[indexPath.row]
+                let name = dict["taskName"] as! String
+                
+                let profile = self.ref.childByAppendingPath(name)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                self.tasks.removeAtIndex(indexPath.row)
+                profile.removeValue()
+                
+                if self.tasks.count == 0{
+                    tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                }
+                tableView.endUpdates()
+            }
+
             return true
         })
             ,MGSwipeButton(title: "More",backgroundColor: UIColor.lightGrayColor())]
@@ -147,14 +192,17 @@ class TaskViewController: UIViewController {
         
         return cell
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func configureCell(cell:MGSwipeTableCell, indexPath: NSIndexPath){
+        let dict = tasks[indexPath.row]
+        
+        let tName = dict["taskName"] as? String
+        let tDescription = dict["taskDescription"] as? String
+        let tDue = dict["taskDue"] as? String
+        
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        cell.textLabel?.text = tName
+        cell.detailTextLabel!.text = tDescription! + "due by " + tDue!
     }
-    */
 
 }
