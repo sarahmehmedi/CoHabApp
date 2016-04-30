@@ -75,15 +75,14 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
     }
     // When the view is opened particularly if it is after submit it will add the new bills if there are new bill
     override func viewDidLoad() {
-    super.viewDidLoad()
-        self.navigationItem.setHidesBackButton(true, animated:true);
-        let items = ["Home", "Tasks", "Calendar", "Bills", "Chat"]
+        super.viewDidLoad()
+        let items = ["Home", "Tasks", "Calendar", "Bills", "Chat", "Settings"]
         
         self.navigationController?.navigationBar.translucent = false
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.0/255.0, green:180/255.0, blue:220/255.0, alpha: 1.0)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         
-        menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, title: items[3], items: items)
+        menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, title: items[0], items: items)
         menuView.cellHeight = 50
         menuView.cellBackgroundColor = self.navigationController?.navigationBar.barTintColor
         menuView.cellSelectionColor = UIColor(red: 0.0/255.0, green:160.0/255.0, blue:195.0/255.0, alpha: 1.0)
@@ -112,16 +111,24 @@ class BillsViewController:UIViewController, UITableViewDataSource, UITableViewDe
                 let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("billsView")
                 self.showViewController(vc as! UIViewController, sender: vc)
             }
-            if(indexPath == 4)
+            if (indexPath == 4)
             {
                 let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ChatVC") as! UITabBarController
                 vc.selectedIndex = 0
                 self.presentViewController(vc, animated: true, completion: nil)
+                
+            }
+            if (indexPath == 5){
+                let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("settingsView")
+                self.showViewController(vc as! UIViewController, sender: vc)
             }
         }
         self.navigationItem.titleView = menuView
         // Do any additional setup after loading the view.
+        
     }
+    
+
     
     // This is just the "+" button that takes us to the form to add a new bill
     @IBAction func addBill(sender: AnyObject) {

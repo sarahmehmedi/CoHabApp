@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="D164F70C-84E8-4013-965B-70D379392CDB" translatesAutoresizingMaskIntoConstraints="NO" id="ilR-Uw-pc4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="7691B345-B6BE-40D6-9886-A35D8083C5F0" translatesAutoresizingMaskIntoConstraints="NO" id="ilR-Uw-pc4">
                                 <rect key="frame" x="114" y="81" width="373" height="413"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoOnly" translatesAutoresizingMaskIntoConstraints="NO" id="Zpz-Nd-UW2">
@@ -1186,24 +1186,24 @@ Continue by completing the form with the criteria requested.</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="178" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FBf-Jn-a38">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FBf-Jn-a38">
                                 <rect key="frame" x="0.0" y="51" width="600" height="549"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="178" id="uoo-sw-kdv" customClass="CustomCell" customModule="CoHab" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="178"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="81" id="uoo-sw-kdv" customClass="CustomCell" customModule="CoHab" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uoo-sw-kdv" id="yVF-4d-QDy">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="177.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="80.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4Ut-iG-KU2">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4Ut-iG-KU2">
                                                     <rect key="frame" x="0.0" y="-1" width="413" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vWX-M7-goa">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vWX-M7-goa">
                                                     <rect key="frame" x="428" y="-4" width="172" height="32"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="172" id="TNv-qH-Xlq"/>
@@ -1213,29 +1213,15 @@ Continue by completing the form with the criteria requested.</string>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2lI-BP-0ix">
-                                                    <rect key="frame" x="0.0" y="36" width="600" height="141"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="vWX-M7-goa" firstAttribute="top" secondItem="yVF-4d-QDy" secondAttribute="topMargin" constant="-12" id="9q6-59-vdv"/>
                                                 <constraint firstItem="vWX-M7-goa" firstAttribute="leading" secondItem="4Ut-iG-KU2" secondAttribute="trailing" constant="15" id="K4y-ZO-utd"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="2lI-BP-0ix" secondAttribute="bottom" constant="-7.5" id="Lcu-2A-6OB"/>
-                                                <constraint firstItem="2lI-BP-0ix" firstAttribute="leading" secondItem="yVF-4d-QDy" secondAttribute="leading" id="R3a-LI-e72"/>
-                                                <constraint firstItem="vWX-M7-goa" firstAttribute="trailing" secondItem="2lI-BP-0ix" secondAttribute="trailing" id="Rvi-6a-cSc"/>
-                                                <constraint firstItem="2lI-BP-0ix" firstAttribute="top" secondItem="vWX-M7-goa" secondAttribute="bottom" constant="8" symbolic="YES" id="SJa-ar-Ubu"/>
                                                 <constraint firstItem="4Ut-iG-KU2" firstAttribute="top" secondItem="yVF-4d-QDy" secondAttribute="topMargin" constant="-9" id="f8e-qt-XGJ"/>
-                                                <constraint firstItem="2lI-BP-0ix" firstAttribute="top" secondItem="4Ut-iG-KU2" secondAttribute="bottom" constant="4" id="l0G-ER-UTd"/>
-                                                <constraint firstAttribute="trailing" secondItem="2lI-BP-0ix" secondAttribute="trailing" id="t1m-Lj-bMc"/>
-                                                <constraint firstItem="4Ut-iG-KU2" firstAttribute="leading" secondItem="2lI-BP-0ix" secondAttribute="leading" id="wLU-hP-El9"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="taskDate" destination="vWX-M7-goa" id="tFF-qQ-SQz"/>
-                                            <outlet property="taskDescription" destination="2lI-BP-0ix" id="nBA-sx-oRE"/>
                                             <outlet property="taskName" destination="4Ut-iG-KU2" id="kQt-bN-PUK"/>
                                         </connections>
                                     </tableViewCell>
@@ -1465,7 +1451,7 @@ Continue by completing the form with the criteria requested.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="D164F70C-84E8-4013-965B-70D379392CDB" width="612" height="792">
+        <image name="7691B345-B6BE-40D6-9886-A35D8083C5F0" width="612" height="792">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGSUpYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEAcI
 ERYbHCUmJysyNzo9Q0ZVJG51bGzUCQoLDA0ODxBWJGNsYXNzXE5TSW1hZ2VGbGFnc1ZOU1JlcHNXTlND

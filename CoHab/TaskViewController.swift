@@ -32,13 +32,13 @@ class TaskViewController: UIViewController {
             self.table.reloadData()
         }
         super.viewDidLoad()
-        let items = ["Home", "Tasks", "Calendar", "Bills", "Chat"]
+        let items = ["Home", "Tasks", "Calendar", "Bills", "Chat", "Settings"]
         
         self.navigationController?.navigationBar.translucent = false
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.0/255.0, green:180/255.0, blue:220/255.0, alpha: 1.0)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         
-        menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, title: items[1], items: items)
+        menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, title: items[0], items: items)
         menuView.cellHeight = 50
         menuView.cellBackgroundColor = self.navigationController?.navigationBar.barTintColor
         menuView.cellSelectionColor = UIColor(red: 0.0/255.0, green:160.0/255.0, blue:195.0/255.0, alpha: 1.0)
@@ -74,11 +74,16 @@ class TaskViewController: UIViewController {
                 self.presentViewController(vc, animated: true, completion: nil)
                 
             }
-
+            if (indexPath == 5){
+                let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("settingsView")
+                self.showViewController(vc as! UIViewController, sender: vc)
+            }
         }
         self.navigationItem.titleView = menuView
         // Do any additional setup after loading the view.
+        
     }
+    
  
     func loadDataFromFirebase(){
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -201,8 +206,8 @@ class TaskViewController: UIViewController {
         let tDue = dict["taskDue"] as? String
         
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-        cell.textLabel?.text = tName
-        cell.detailTextLabel!.text = tDescription! + "due by " + tDue!
+        cell.textLabel?.text = tName! + " Finish by: " + tDue!
+        cell.detailTextLabel!.text = tDescription
     }
 
 }
