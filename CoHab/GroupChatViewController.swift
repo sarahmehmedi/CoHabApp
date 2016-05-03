@@ -9,7 +9,7 @@
 import UIKit
 import BTNavigationDropdownMenu
 
-class GroupChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class GroupChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ChooseUserDelegate {
 
     var menuView: BTNavigationDropdownMenu!
 
@@ -69,6 +69,8 @@ class GroupChatViewController: UIViewController, UITableViewDataSource, UITableV
         self.navigationItem.titleView = menuView
         // Do any additional setup after loading the view.
         
+        loadRecents()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -96,7 +98,37 @@ class GroupChatViewController: UIViewController, UITableViewDataSource, UITableV
         cell.bindData(groupChat)        
         return cell
     }
-
+    
+    //MARK: UITableviewDelegate functions
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        let recent = groupChats[indexPath.row]
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        //create groupchat view for both users
+        RestartRecentChat(recent)
+        performSegueWithIdentifier("groupChatToChatRoomSegue", sender: indexPath)
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
+    {
+        return true
+    }
+    
+    //delete a groupchat cell in table view
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
+    {
+        let recent = groupChats[indexPath.row]
+        
+        //remove cell data stored in recent from the array
+        groupChats.removeAtIndex(indexPath.row)
+        
+        //delete cell data stored in recent from firebase
+        DeleteChatItem(recent)
+        
+        //reload the table view
+        tableView.reloadData()
+    }
     
     //MARK: IBActions
     
@@ -112,38 +144,67 @@ class GroupChatViewController: UIViewController, UITableViewDataSource, UITableV
         if(segue.identifier == "groupChatToChooseUserVC")
         {
             let vc = segue.destinationViewController as! ChooseUserViewController
-            //vc.delegate = self
+            vc.delegate = self
         }
-        /*
-        if(segue.identifier == "groupChatToChooseUserVC")
+        
+        if(segue.identifier == "groupChatToChatRoomSegue")
         {
             let indexPath = sender as! NSIndexPath
-            let chatVC = segue.destinationViewController as! ChatViewController
-            
+            let chatVC = segue.destinationViewController as! ChatRoomViewController
+            chatVC.hidesBottomBarWhenPushed = true
             let groupChat = groupChats[indexPath.row]
             
             //set chatVC groupChat to the groupChat for chatroom
-            chatVC.groupChat = groupChat
-            chatVC.chatRoomId = groupChat["chatroomID"] as? String //set chatroom ID
+            chatVC.recent = groupChat
+            chatVC.chatRoomId = groupChat["chatRoomID"] as? String //set chatroom ID
             
-        }*/
+        }
     }
     
     //MARK: ChooseUserDelegate
-    /*
+    
     //as soon as user taps cell to create chatroom with selected user
     func createChatroom(withUser: BackendlessUser)
     {
-        let chatVC = ChatViewController()//instantiate chat view controller
+        let chatVC = ChatRoomViewController()//instantiate chat view controller
         chatVC.hidesBottomBarWhenPushed = true //hide the bottom navigation bar from view when chat initiated
         
-        //call the navigation controller to put to new created chat view controller on stack
+        //call the navigation controller to put to new created chatroom view controller on stack
         navigationController?.pushViewController(chatVC, animated: true)
         
         //set chatVC groupChat to the groupChat
         chatVC.withUser = withUser
         chatVC.chatRoomId = startChat(currentUser, user2:withUser) //generate chatroom ID using user ID
-    }*/
-
+    }
     
+    //MARK: Load Groupchats from Firebase
+    
+    func loadRecents()
+    {
+        firebase.childByAppendingPath("GroupChat").queryOrderedByChild("userId").queryEqualToValue(currentUser.objectId).observeEventType(.Value, withBlock: {
+            snapshot in
+
+            self.groupChats.removeAll() //clear recents array just in case
+            
+            if(snapshot.exists()) //check if snapshot exists
+            {
+                //sort array by date (most recent chats higher up than older ones)
+                let sorted = (snapshot.value.allValues as NSArray).sortedArrayUsingDescriptors([NSSortDescriptor(key: "date", ascending: false)])
+                
+                for recent in sorted
+                {
+                    self.groupChats.append(recent as! NSDictionary)
+                    
+                    //add function to have offline access as well
+                    /*
+                     firebase.childByAppendingPath("Recent").queryOrderedByChild("chatroomID")
+                     queryEqualToValue(groupChat["chatroomID"]).observeEventType(.Value, withBlock: { snapshot in })
+ 
+                     */
+                }
+            }
+            self.tableView.reloadData() //reload table
+        })
+    }
+
 }

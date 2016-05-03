@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		16E3B717FD1C9F2FA1E4F410 /* Pods_CoHab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86BEBDD4CA84FB156A338D78 /* Pods_CoHab.framework */; };
+		414705BE1CD7CD770079A0B1 /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414705BD1CD7CD770079A0B1 /* ChatRoomViewController.swift */; };
+		414705C11CD7EF7B0079A0B1 /* OutgoingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414705C01CD7EF7B0079A0B1 /* OutgoingMessage.swift */; };
+		414705C31CD803920079A0B1 /* IncomingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414705C21CD803920079A0B1 /* IncomingMessage.swift */; };
+		414705C51CD82AF20079A0B1 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414705C41CD82AF20079A0B1 /* Camera.swift */; };
 		415A12521CC2E11D00E38482 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 415A12421CC2E11D00E38482 /* AppDelegate.m */; };
 		415A12531CC2E11D00E38482 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 415A12431CC2E11D00E38482 /* LaunchScreen.xib */; };
 		415A12541CC2E11D00E38482 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 415A12451CC2E11D00E38482 /* Images.xcassets */; };
@@ -105,6 +109,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		414705BD1CD7CD770079A0B1 /* ChatRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
+		414705C01CD7EF7B0079A0B1 /* OutgoingMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutgoingMessage.swift; sourceTree = "<group>"; };
+		414705C21CD803920079A0B1 /* IncomingMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomingMessage.swift; sourceTree = "<group>"; };
+		414705C41CD82AF20079A0B1 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		415A12411CC2E11D00E38482 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		415A12421CC2E11D00E38482 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		415A12441CC2E11D00E38482 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -428,6 +436,7 @@
 				417DD2211CCEA1DB00309364 /* GroupChatTableViewCell.swift */,
 				417DD2231CCEA45600309364 /* GroupChatViewController.swift */,
 				417DD2271CCEB1E400309364 /* ChooseUserViewController.swift */,
+				414705BD1CD7CD770079A0B1 /* ChatRoomViewController.swift */,
 			);
 			name = Chat;
 			sourceTree = "<group>";
@@ -870,6 +879,9 @@
 				83D1D4641CC7B0FC00B84C76 /* Images */,
 				D1F4211B1CC84A1E00D9B229 /* SettingsViewController.swift */,
 				417DD2251CCEA7BE00309364 /* Chat.swift */,
+				414705C01CD7EF7B0079A0B1 /* OutgoingMessage.swift */,
+				414705C21CD803920079A0B1 /* IncomingMessage.swift */,
+				414705C41CD82AF20079A0B1 /* Camera.swift */,
 			);
 			path = CoHab;
 			sourceTree = "<group>";
@@ -1121,6 +1133,7 @@
 				415A12521CC2E11D00E38482 /* AppDelegate.m in Sources */,
 				D1F4211C1CC84A1E00D9B229 /* SettingsViewController.swift in Sources */,
 				D17036CD1C9A1302006E6061 /* AppDelegate.swift in Sources */,
+				414705C31CD803920079A0B1 /* IncomingMessage.swift in Sources */,
 				6578CB031CCAD334007D8465 /* DayViewController.swift in Sources */,
 				417DD2281CCEB1E400309364 /* ChooseUserViewController.swift in Sources */,
 				8BA604B61CC0545C00F30A1A /* HelpViewController.swift in Sources */,
@@ -1130,9 +1143,12 @@
 				417DD2241CCEA45600309364 /* GroupChatViewController.swift in Sources */,
 				41A55DE01CC2998A0079B752 /* WelcomeViewController.swift in Sources */,
 				41A55DE21CC2A5490079B752 /* RegisterViewController.swift in Sources */,
+				414705C11CD7EF7B0079A0B1 /* OutgoingMessage.swift in Sources */,
 				D1B06BC51CBA2F9900F9E13F /* CustomCell.swift in Sources */,
+				414705C51CD82AF20079A0B1 /* Camera.swift in Sources */,
 				83847C091CB1FF9600F1E419 /* BillsViewController.swift in Sources */,
 				417DD2221CCEA1DB00309364 /* GroupChatTableViewCell.swift in Sources */,
+				414705BE1CD7CD770079A0B1 /* ChatRoomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

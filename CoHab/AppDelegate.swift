@@ -7,24 +7,31 @@
 //
 
 import UIKit
+import Firebase
+import CoreLocation
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
-  
+    //setup plist to get location working
+    //NSLocationWhenInUseUsageDescription = your text
+    var locationManager: CLLocationManager?
+    var coordinate: CLLocationCoordinate2D?
+    
     let APP_ID = "6C1725AD-9D6B-7881-FF33-84FB18E7D200"//Our application's generated ID from Backendless Management Dashboard.
     let SECRET_KEY = "D06229C5-B85F-B880-FF8F-86465F567000" //Our application's generated iOS-specific secret key from Backendless Management Dashboard. Can be regenerated
     let VERSION_NUM = "v1" //Backendless requries version number, so arbitrarily just calling our current build v1
     
     var backendless = Backendless.sharedInstance() //instance of backendless to be initialized later when application is launched
-    
+   
     var window: UIWindow?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         backendless.initApp(APP_ID, secret:SECRET_KEY, version:VERSION_NUM); //initializing our backendless instance with our secret keys
-        
+        //try to get firebase to work offline:
+        Firebase.defaultConfig().persistenceEnabled = true
         return true
     }
 
@@ -43,12 +50,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        //Call function to start getting user location data
+        locationManagerStart()
     }
 
     func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        //Call function to stop getting user location data
+        locationManagerStop()
+    }
+    
+    
+    //MARK: LocationManager functions
+    
+    func locationManagerStart()
+    {
+        //check if there isn't an instance of location manager, and in that case, create one and set its delegate
+        if(locationManager == nil)
+        {
+            print("init locationManager")
+            locationManager = CLLocationManager()
+            locationManager!.delegate = self //set location manager delegate to this class
+            locationManager!.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager!.requestWhenInUseAuthorization() //get location permission
+        }
+        //if we do have a location manager instance, however, update user location
+        print("have location manager")
+        locationManager!.startUpdatingLocation()
+        
     }
 
+    func locationManagerStop()
+    {
+        locationManager!.stopUpdatingLocation()
+    }
+    
+    //MARK: CLLocationManager Delegate
+    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation)
+    {
+        coordinate = newLocation.coordinate
+    }
 }
 

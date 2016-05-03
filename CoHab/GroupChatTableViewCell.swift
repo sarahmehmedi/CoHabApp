@@ -38,7 +38,7 @@ class GroupChatTableViewCell: UITableViewCell {
         avatarImageView.layer.masksToBounds = true //don't let image exceed bounds of imageview
         
         //set avatar image in imageview
-        self.avatarImageView.image = UIImage(named: "avatarPlaceHolder")
+        self.avatarImageView.image = UIImage(named: "avatarPlaceholder")
         
         //use this to get the user from backendless
         let withUserID = (groupChat.objectForKey("withUserUserId") as? String)!

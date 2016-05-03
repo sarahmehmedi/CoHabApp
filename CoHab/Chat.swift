@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import JSQMessagesViewController
 
 let firebase = Firebase(url: "https://cohabapp.firebaseio.com/")
 let backendless = Backendless.sharedInstance()
@@ -84,6 +85,75 @@ func createGroupChatItem(userId: String, chatRoomID: String, members: [String], 
     }
     
 }
+
+//MARK: Update Groupchat
+func UpdateGroupChats(chatRoomID: String, lastMessage: String)
+{
+    //query to get both chats back
+    firebase.childByAppendingPath("GroupChat").queryOrderedByChild("chatRoomID").queryEqualToValue(chatRoomID).observeSingleEventOfType(.Value, withBlock: {
+        snapshot in
+        
+        if (snapshot.exists())
+        {
+            //go to ever groupchat and update them (should be 2 for now, 1 for each of the users involved in the chatroom)
+            for groupChat in snapshot.value.allValues
+            {
+                //update groupchat
+                UpdateGroupChatItem(groupChat as! NSDictionary, lastMessage: lastMessage)
+            }
+        }
+    }) //could use something similar to query for group ID
+    
+}
+
+func UpdateGroupChatItem(groupChat: NSDictionary, lastMessage: String)
+{
+    let date = dateFormatter().stringFromDate(NSDate())
+    var counter = groupChat["counter"] as! Int
+    //Only change counter for other user, not current user
+    if(groupChat["userId"] as? String != currentUser.objectId)
+    {
+        counter += 1
+    }
+    
+    let values = ["lastMessage" : lastMessage, "counter" : counter, "date" : date]
+    //get and update groupchat
+    firebase.childByAppendingPath("GroupChat").childByAppendingPath(groupChat["groupChatId"] as? String).updateChildValues(values as [NSObject: AnyObject], withCompletionBlock: {
+        (error, ref) -> Void in
+        if(error != nil)
+        {
+            print("Error, couldn't update groupChat item \(error)")
+        }
+    })
+    
+}
+
+
+//MARK: Restart Recent Chat
+func RestartRecentChat(recent: NSDictionary)
+{
+    let chatID = (recent["chatRoomID"] as? String)!
+    for userId in recent["members"] as! [String]
+    {
+        if(userId != currentUser.objectId)
+        {
+            createGroupChat(userId, chatRoomID: ((recent["chatRoomID"] as? String)!), members: recent["members"] as! [String], withUserUsername: currentUser.name, withUseruserId: currentUser.objectId)
+        }
+    }
+}
+
+//MARK: Delete Chat functions
+func DeleteChatItem(chat: NSDictionary)
+{
+    firebase.childByAppendingPath("GroupChat").childByAppendingPath(chat["groupChatId"] as? String).removeValueWithCompletionBlock { (error, reference)  -> Void in
+        if(error != nil)
+        {
+            print("Error deleting chat item: \(error)")
+        }
+    }
+}
+
+
 //MARK: Helper functions
 
 private let dateFormat = "yyyyMMddHHmmss"

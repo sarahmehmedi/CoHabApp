@@ -8,10 +8,16 @@
 
 import UIKit
 
+protocol ChooseUserDelegate
+{
+    //TO DO: Only working for 1 user thus far, need to make this for groups once it gets working
+    func createChatroom(withUser: BackendlessUser)
+}
+
 class ChooseUserViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    //var delegate: ChooseUserDelegate!
+    var delegate: ChooseUserDelegate!
     var users: [BackendlessUser] = []
     
     override func viewDidLoad()
@@ -50,19 +56,17 @@ class ChooseUserViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     //MARK: UITableViewDelegate
-    /*
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         
-        let user = users[indexPath.row]
-        
-        delegate.createChatroom(user)
-        
+        let user = users[indexPath.row] //get user
+        delegate.createChatroom(user)//protocol delegate passing user so every viewcontroller that conforms to the delegate will be informed that the choose user VC has selected a user
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         self.dismissViewControllerAnimated(true, completion: nil)//dismiss the view upon user selection:
         
     }
-    */
+    
     //MARK: IBActions
 
     @IBAction func cancelButtonPressed(sender: AnyObject)
