@@ -988,7 +988,6 @@
 				TargetAttributes = {
 					D17036C81C9A1302006E6061 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = NDA6SX8WLX;
 					};
 					D17036DC1C9A1302006E6061 = {
 						CreatedOnToolsVersion = 7.2.1;
